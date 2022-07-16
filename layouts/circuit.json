@@ -1,5 +1,5 @@
 {
-	"name": "Layout 1",
+	"name": "circuit",
 	"layers": [
 		{
 			"name": "circuit",
@@ -151,7 +151,7 @@
 						"z-tiling-factor": 8,
 						"object-back": -1,
 						"object-front": -1,
-						"object-left": -1,
+						"object-left": 628836089509290,
 						"object-right": -1,
 						"object-top": -1,
 						"object-bottom": -1
@@ -161,12 +161,12 @@
 					"behaviors": {
 						"Car": {
 							"properties": {
-								"max-speed": 100,
+								"max-speed": 150,
 								"acceleration": 30,
 								"deceleration": 80,
 								"steer-speed": 100,
 								"drift-recover": 185,
-								"friction": 0,
+								"friction": 1,
 								"turn-while-stopped": false,
 								"set-angle": true,
 								"default-controls": true,
@@ -225,6 +225,35 @@
 						"angle": 4.71238898038469,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Mario",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Correndo",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 6,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1272,
+						"y": 608,
+						"width": 7.5,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 206281224891074,
@@ -265,5 +294,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Event sheet 1"
+	"eventSheet": "EsCircuit"
 }

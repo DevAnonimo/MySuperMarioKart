@@ -1,0 +1,171 @@
+{
+	"name": "EsCircuit",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 539924737511021
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "camera",
+					"sid": 441028086962038,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "player",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 155928672402841
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 248432583840476
+				}
+			],
+			"actions": [
+				{
+					"id": "look-parallel-to-layout",
+					"objectClass": "3DCamera",
+					"sid": 573988114307759,
+					"disabled": true,
+					"parameters": {
+						"cam-x": "camera.X",
+						"cam-y": "camera.Y",
+						"cam-z": "1",
+						"look-angle": "camera.Angle"
+					}
+				},
+				{
+					"id": "look-at-position",
+					"objectClass": "3DCamera",
+					"sid": 812012743467080,
+					"parameters": {
+						"cam-x": "camera.X",
+						"cam-y": "camera.Y",
+						"cam-z": "1.5",
+						"look-x": "player.X",
+						"look-y": "player.Y",
+						"look-z": "0.5",
+						"up-x": "0",
+						"up-y": "0",
+						"up-z": "1"
+					}
+				}
+			],
+			"sid": 745152087266380
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 470223954410683,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 870270772052562,
+					"parameters": {
+						"key": 37
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 600938377329296,
+					"parameters": {
+						"key": 39
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 667996245545605,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 474652837064844
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Mario",
+							"sid": 207741334592295,
+							"parameters": {
+								"animation": "\"Correndo\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 973171024124415
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 505102698637376,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [],
+			"sid": 444428697754356,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 492671644394862
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Mario",
+							"sid": 295015788961550,
+							"parameters": {
+								"animation": "\"e-fraco\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 663275987025546
+				}
+			]
+		}
+	],
+	"sid": 672380237338827
+}

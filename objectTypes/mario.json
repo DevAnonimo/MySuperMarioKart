@@ -1,0 +1,171 @@
+{
+	"name": "Mario",
+	"plugin-id": "Sprite",
+	"sid": 628836089509290,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 30,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2353028,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.12500000000000022,
+								0.5333333333333333,
+								0,
+								1,
+								0.15625,
+								1,
+								1,
+								1,
+								1,
+								0.5333333333333333,
+								1,
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 652593859071603,
+				"name": "Correndo",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": [
+			{
+				"items": [
+					{
+						"frames": [
+							{
+								"width": 30,
+								"height": 32,
+								"originX": 0.5333333333333333,
+								"originY": 3.546875,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 7417162,
+								"collisionPoly": {
+									"points": [
+										0,
+										0.12500000000000022,
+										0.5333333333333333,
+										0,
+										1,
+										0.15625,
+										1,
+										1,
+										1,
+										1,
+										0.5333333333333333,
+										1,
+										0,
+										1,
+										0,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 31,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 5501020,
+								"collisionPoly": {
+									"points": [
+										0,
+										1,
+										1,
+										0,
+										1,
+										1,
+										1,
+										1,
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 29,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 3691270,
+								"collisionPoly": {
+									"points": [
+										0,
+										1,
+										1,
+										0,
+										1,
+										1,
+										1,
+										1,
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							}
+						],
+						"sid": 513894754672505,
+						"name": "e-fraco",
+						"isLooping": false,
+						"isPingPong": false,
+						"repeatCount": 1,
+						"repeatTo": 0,
+						"speed": 6
+					}
+				],
+				"subfolders": [],
+				"name": "Esquerda"
+			}
+		]
+	}
+}
