@@ -199,6 +199,15 @@
 							],
 							"actions": [
 								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 640517276068784,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "30"
+									}
+								},
+								{
 									"type": "comment",
 									"text": "Animações"
 								},
@@ -237,6 +246,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 943757363084578,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "20"
+									}
+								},
 								{
 									"type": "comment",
 									"text": "Animações"
@@ -400,6 +418,15 @@
 							],
 							"actions": [
 								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 123671178539818,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "30"
+									}
+								},
+								{
 									"type": "comment",
 									"text": "Animações"
 								},
@@ -438,6 +465,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 576999040513648,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "20"
+									}
+								},
 								{
 									"type": "comment",
 									"text": "Animações"
