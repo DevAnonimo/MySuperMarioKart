@@ -164,7 +164,7 @@
 								"max-speed": 150,
 								"acceleration": 30,
 								"deceleration": 80,
-								"steer-speed": 100,
+								"steer-speed": 80,
 								"drift-recover": 185,
 								"friction": 1,
 								"turn-while-stopped": false,
@@ -294,5 +294,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "EsCircuit"
+	"eventSheet": "esCircuit"
 }

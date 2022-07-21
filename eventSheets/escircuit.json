@@ -1,6 +1,20 @@
 {
-	"name": "EsCircuit",
+	"name": "esCircuit",
 	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "esFunctions"
+		},
+		{
+			"eventType": "variable",
+			"name": "speed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 130630894789800
+		},
 		{
 			"eventType": "block",
 			"conditions": [
@@ -24,6 +38,50 @@
 						"width-type": "no",
 						"height-type": "no",
 						"z": false
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Mapping"
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 531062674146986,
+					"parameters": {
+						"name": "\"movement\"",
+						"string": "\"forward\"",
+						"function": "forward"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 473471031402761,
+					"parameters": {
+						"name": "\"movement\"",
+						"string": "\"reverse\"",
+						"function": "reverse"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 776295760945379,
+					"parameters": {
+						"name": "\"movement\"",
+						"string": "\"right\"",
+						"function": "right"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 372177181140009,
+					"parameters": {
+						"name": "\"movement\"",
+						"string": "\"left\"",
+						"function": "left"
 					}
 				}
 			],
@@ -71,100 +129,207 @@
 			"sid": 745152087266380
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 470223954410683,
-					"parameters": {
-						"key": 38
-					}
-				},
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 870270772052562,
-					"parameters": {
-						"key": 37
-					},
-					"isInverted": true
-				},
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 600938377329296,
-					"parameters": {
-						"key": 39
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [],
-			"sid": 667996245545605,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movement",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Forward"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 474652837064844
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 428347843531981,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 647537872651601,
+							"parameters": {
+								"key": 39
+							},
+							"isInverted": true
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 674733492059719,
+							"parameters": {
+								"key": 37
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
-							"id": "set-animation",
-							"objectClass": "Mario",
-							"sid": 207741334592295,
+							"callFunction": "Controlls",
+							"sid": 273112200843995,
+							"parameters": [
+								"\"forward\""
+							]
+						}
+					],
+					"sid": 594002859430291
+				},
+				{
+					"eventType": "comment",
+					"text": "Reverse"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 402496683965952
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 718690532378439,
 							"parameters": {
-								"animation": "\"Correndo\"",
-								"from": "beginning"
+								"key": 40
 							}
 						}
 					],
-					"sid": 973171024124415
+					"actions": [],
+					"sid": 193148625824563
+				},
+				{
+					"eventType": "comment",
+					"text": "Right"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 844228009994649
+						}
+					],
+					"actions": [],
+					"sid": 174918345119050,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 565556218921073,
+									"parameters": {
+										"key": 38
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 574644986278660,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Controlls",
+									"sid": 184472242204996,
+									"parameters": [
+										"\"right\""
+									]
+								}
+							],
+							"sid": 703709730757176
+						},
+						{
+							"eventType": "comment",
+							"text": "Left"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 996784844437704
+								}
+							],
+							"actions": [],
+							"sid": 679347732114283,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 809623117026974,
+											"parameters": {
+												"key": 38
+											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 747068038684294,
+											"parameters": {
+												"key": 37
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Controlls",
+											"sid": 738056311278004,
+											"parameters": [
+												"\"left\""
+											]
+										}
+									],
+									"sid": 844558538813825
+								}
+							]
+						}
+					]
 				}
-			]
+			],
+			"sid": 696390232506983
+		},
+		{
+			"eventType": "comment",
+			"text": "LOGs"
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 505102698637376,
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 463015494674591
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 390575273915704,
 					"parameters": {
-						"key": 37
+						"variable": "speed",
+						"value": "player.Car.Speed"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 444428697754356,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 492671644394862
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Mario",
-							"sid": 295015788961550,
-							"parameters": {
-								"animation": "\"e-fraco\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 663275987025546
-				}
-			]
+			"sid": 475059134088938
 		}
 	],
 	"sid": 672380237338827
