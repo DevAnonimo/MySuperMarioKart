@@ -16,14 +16,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Camera3D",
-			"name": "3D camera",
-			"author": "Scirra",
-			"version": "r302",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Shape3D",
 			"name": "3D shape",
 			"author": "Scirra",
@@ -32,8 +24,24 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Camera3D",
+			"name": "3D camera",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false
@@ -53,25 +61,15 @@
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
-			"author": "Scirra",
-			"version": "r302",
-			"bundled": false
 		}
 	],
 	"uniqueId": "xz6ofd2aptv",
 	"objectTypes": {
 		"items": [
-			"bgmariocircuit",
 			"3DCamera",
 			"camera",
 			"player",
-			"Keyboard",
-			"mapColliders"
+			"Keyboard"
 		],
 		"subfolders": [
 			{
@@ -80,6 +78,15 @@
 				],
 				"subfolders": [],
 				"name": "characters"
+			},
+			{
+				"items": [
+					"bgmariocircuit",
+					"mapColliders",
+					"trees"
+				],
+				"subfolders": [],
+				"name": "Map"
 			}
 		]
 	},

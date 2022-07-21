@@ -1074,27 +1074,78 @@
 					"global": false
 				},
 				{
-					"name": "map",
+					"name": "background",
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "bgmariocircuit",
+							"type": "trees",
 							"properties": {
+								"shape": "box",
+								"z-height": 7,
 								"initially-visible": true,
-								"initial-animation": "Default",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
+								"face-back": false,
+								"face-front": false,
+								"face-left": false,
+								"face-right": false,
+								"face-top": false,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": -1,
+								"object-front": -1,
+								"object-left": -1,
+								"object-right": -1,
+								"object-top": -1,
+								"object-bottom": -1
 							},
-							"uid": 2,
+							"uid": 31,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 1051,
-								"y": 500,
-								"width": 1410,
-								"height": 1108,
+								"x": 356.81898519561344,
+								"y": 536.163697069477,
+								"width": 1027.9997352812402,
+								"height": 8,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 1.5707963267948966,
+								"zElevation": -0.3
+							}
+						},
+						{
+							"type": "trees",
+							"properties": {
+								"shape": "box",
+								"z-height": 7,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": false,
+								"face-left": false,
+								"face-right": false,
+								"face-top": false,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": -1,
+								"object-front": -1,
+								"object-left": -1,
+								"object-right": -1,
+								"object-top": -1,
+								"object-bottom": -1
+							},
+							"uid": 30,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 865.5923812304297,
+								"y": 19.916601153927488,
+								"width": 1027.9997352812402,
+								"height": 8,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -1104,7 +1155,7 @@
 									1
 								],
 								"angle": 0,
-								"zElevation": 0
+								"zElevation": -0.3
 							}
 						}
 					],
@@ -1119,12 +1170,12 @@
 						1
 					],
 					"backgroundColor": [
-						0.3686274509803922,
-						0.3686274509803922,
-						0.3686274509803922,
+						0.9725490196078431,
+						0.9098039215686274,
+						0.5647058823529412,
 						1
 					],
-					"isTransparent": true,
+					"isTransparent": false,
 					"parallaxX": 1,
 					"parallaxY": 1,
 					"scaleRate": 1,
@@ -1137,7 +1188,37 @@
 					"global": false
 				}
 			],
-			"instances": [],
+			"instances": [
+				{
+					"type": "bgmariocircuit",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1051,
+						"y": 500,
+						"width": 1410,
+						"height": 1108,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 247515668261610,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -1149,9 +1230,9 @@
 				1
 			],
 			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
+				0.9725490196078431,
+				0.9098039215686274,
+				0.5647058823529412,
 				1
 			],
 			"isTransparent": true,
