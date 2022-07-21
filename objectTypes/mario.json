@@ -172,7 +172,7 @@
 								"originalSource": "",
 								"exportFormat": "png",
 								"exportQuality": 0.8,
-								"imageSpriteId": 6069805,
+								"imageSpriteId": 9033790,
 								"collisionPoly": {
 									"points": [
 										0,
@@ -400,6 +400,354 @@
 				],
 				"subfolders": [],
 				"name": "Esquerda"
+			},
+			{
+				"items": [
+					{
+						"frames": [
+							{
+								"width": 30,
+								"height": 32,
+								"originX": 0.4666666666666667,
+								"originY": 3.546875,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 8467300,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0.4666666666666667,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0.15625,
+										0.4666666666666667,
+										0,
+										1,
+										0.12500000000000022
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 31,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 7879336,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0,
+										1,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 29,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 7887078,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0,
+										1,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							}
+						],
+						"sid": 105640722269801,
+						"name": "d-fraco",
+						"isLooping": false,
+						"isPingPong": false,
+						"repeatCount": 1,
+						"repeatTo": 0,
+						"speed": 6
+					},
+					{
+						"frames": [
+							{
+								"width": 30,
+								"height": 32,
+								"originX": 0.4666666666666667,
+								"originY": 3.546875,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 4218662,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0.4666666666666667,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0.15625,
+										0.4666666666666667,
+										0,
+										1,
+										0.12500000000000022
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 31,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 4085026,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0,
+										1,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 29,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 897017,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0,
+										1,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 29,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 7192442,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0,
+										1,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 29,
+								"height": 33,
+								"originX": 0.5,
+								"originY": 0.5,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 4663126,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0.3759469696969697,
+										0,
+										0,
+										1,
+										0.09469696969697164
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 30,
+								"height": 33,
+								"originX": -2.5,
+								"originY": 3.4696969696969697,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 4464362,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0,
+										1,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							},
+							{
+								"width": 30,
+								"height": 33,
+								"originX": -42.3,
+								"originY": 30.196969696969695,
+								"originalSource": "",
+								"exportFormat": "png",
+								"exportQuality": 0.8,
+								"imageSpriteId": 5197281,
+								"collisionPoly": {
+									"points": [
+										1,
+										1,
+										1,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										1,
+										0,
+										0,
+										1,
+										1
+									]
+								},
+								"useCollisionPoly": true,
+								"duration": 1
+							}
+						],
+						"sid": 934626333670899,
+						"name": "d-forte",
+						"isLooping": false,
+						"isPingPong": false,
+						"repeatCount": 1,
+						"repeatTo": 0,
+						"speed": 8
+					}
+				],
+				"subfolders": [],
+				"name": "Direita"
 			}
 		]
 	}

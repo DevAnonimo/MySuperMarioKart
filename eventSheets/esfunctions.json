@@ -150,7 +150,196 @@
 					"text": "Animações"
 				}
 			],
-			"sid": 507711156124345
+			"sid": 507711156124345,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-speed",
+							"objectClass": "player",
+							"sid": 857946003819205,
+							"behaviorType": "Car",
+							"parameters": {
+								"comparison": 4,
+								"speed": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "player",
+							"sid": 488524899015418,
+							"behaviorType": "Car",
+							"parameters": {
+								"speed": "player.Car.Speed - 1"
+							}
+						}
+					],
+					"sid": 727423122447885,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Velocidade alta e só ultrapassando"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "player",
+									"sid": 352631376892224,
+									"behaviorType": "Car",
+									"parameters": {
+										"comparison": 5,
+										"speed": "140"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Animações"
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 833334228692227,
+									"parameters": {
+										"animation": "\"d-fraco\"",
+										"from": "current-frame"
+									}
+								},
+								{
+									"id": "set-steer-speed",
+									"objectClass": "player",
+									"sid": 221176297349514,
+									"behaviorType": "Car",
+									"parameters": {
+										"steer-speed": "60"
+									}
+								}
+							],
+							"sid": 653155436169436
+						},
+						{
+							"eventType": "comment",
+							"text": "Curva forte"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 794846476536582
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Animações"
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 297256293947199,
+									"parameters": {
+										"animation": "\"d-forte\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 242201035450096,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 482029927985286,
+											"parameters": {
+												"first-value": "player.Car.SteerSpeed",
+												"comparison": 2,
+												"second-value": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-steer-speed",
+											"objectClass": "player",
+											"sid": 877668245164741,
+											"behaviorType": "Car",
+											"parameters": {
+												"steer-speed": "player.Car.SteerSpeed + 1.5"
+											}
+										}
+									],
+									"sid": 638626349886007
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 798811875939279
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Animações"
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Mario",
+							"sid": 578147676290354,
+							"parameters": {
+								"animation": "\"d-fraco\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 889152852135639,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Mario",
+									"sid": 718334816404341,
+									"parameters": {
+										"comparison": 0,
+										"number": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 605754367114667,
+									"parameters": {
+										"animation": "\"d-fraco\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 242818131781790,
+							"disabled": true
+						}
+					]
+				}
+			]
 		},
 		{
 			"functionName": "left",
@@ -170,11 +359,11 @@
 						{
 							"id": "compare-speed",
 							"objectClass": "player",
-							"sid": 415110422084197,
+							"sid": 649606206959132,
 							"behaviorType": "Car",
 							"parameters": {
 								"comparison": 4,
-								"speed": "80"
+								"speed": "90"
 							}
 						}
 					],

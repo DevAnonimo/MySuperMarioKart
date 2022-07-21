@@ -53,6 +53,14 @@
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
 		}
 	],
 	"uniqueId": "xz6ofd2aptv",
@@ -62,7 +70,8 @@
 			"3DCamera",
 			"camera",
 			"player",
-			"Keyboard"
+			"Keyboard",
+			"mapColliders"
 		],
 		"subfolders": [
 			{
