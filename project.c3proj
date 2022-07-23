@@ -85,7 +85,15 @@
 					"mapColliders",
 					"trees"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"Circuit"
+						],
+						"subfolders": [],
+						"name": "Logics"
+					}
+				],
 				"name": "Map"
 			}
 		]
