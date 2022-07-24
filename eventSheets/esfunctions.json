@@ -18,19 +18,151 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 667764195040334,
+			"children": [
 				{
-					"id": "call-mapped-function",
-					"objectClass": "Functions",
-					"sid": 672699553935946,
-					"parameters": {
-						"name": "\"movement\"",
-						"string": "command",
-						"forward-params": "0"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player",
+							"sid": 577555591762946,
+							"parameters": {
+								"object": "circuitF"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-steer-speed",
+							"objectClass": "player",
+							"sid": 208195698732278,
+							"behaviorType": "Car",
+							"parameters": {
+								"steer-speed": "100"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "player",
+							"sid": 219236021427120,
+							"behaviorType": "Car",
+							"parameters": {
+								"speed": "30"
+							}
+						}
+					],
+					"sid": 920444132745278
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 875420701327208
+						}
+					],
+					"actions": [],
+					"sid": 298928114884578,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sprint",
+									"sid": 663786549721717,
+									"parameters": {
+										"object": "player"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-max-speed",
+									"objectClass": "player",
+									"sid": 989670854239424,
+									"behaviorType": "Car",
+									"parameters": {
+										"max-speed": "sprint.newVelocity"
+									}
+								},
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 904474290550249,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "sprint.newAcceleration"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 268750604031916,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"New velocity: \" & player.Car.MaxSpeed & \" | Acceleration: \" & player.Car.Acceleration"
+									}
+								}
+							],
+							"sid": 197561468008774
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 237948570686480
+								}
+							],
+							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "player",
+									"sid": 819892213150297,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "30"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "player",
+									"sid": 417956428958824,
+									"behaviorType": "Car",
+									"parameters": {
+										"max-speed": "150"
+									}
+								}
+							],
+							"sid": 361895198364571
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "call-mapped-function",
+									"objectClass": "Functions",
+									"sid": 414294577747327,
+									"parameters": {
+										"name": "\"movement\"",
+										"string": "command",
+										"forward-params": "0"
+									}
+								}
+							],
+							"sid": 509542025888765
+						}
+					]
 				}
-			],
-			"sid": 667764195040334
+			]
 		},
 		{
 			"functionName": "forward",
@@ -324,6 +456,14 @@
 								"animation": "\"d-fraco\"",
 								"from": "current-frame"
 							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Mario",
+							"sid": 455607597787698,
+							"parameters": {
+								"frame-number": "2"
+							}
 						}
 					],
 					"sid": 889152852135639,
@@ -542,6 +682,14 @@
 							"parameters": {
 								"animation": "\"e-fraco\"",
 								"from": "current-frame"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Mario",
+							"sid": 674438179845646,
+							"parameters": {
+								"frame-number": "2"
 							}
 						}
 					],

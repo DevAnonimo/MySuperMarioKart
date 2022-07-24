@@ -1,0 +1,12 @@
+{
+	"name": "circuitF",
+	"plugin-id": "Sprite",
+	"sid": 627271482043580,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"race",
+		"sprint"
+	]
+}

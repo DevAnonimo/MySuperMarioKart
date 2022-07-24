@@ -39,6 +39,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -69,7 +77,8 @@
 			"3DCamera",
 			"camera",
 			"player",
-			"Keyboard"
+			"Keyboard",
+			"Browser"
 		],
 		"subfolders": [
 			{
@@ -88,7 +97,8 @@
 				"subfolders": [
 					{
 						"items": [
-							"Circuit"
+							"race",
+							"sprint"
 						],
 						"subfolders": [],
 						"name": "Logics"
@@ -101,7 +111,9 @@
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"circuitF"
+		],
 		"subfolders": []
 	},
 	"layouts": {
