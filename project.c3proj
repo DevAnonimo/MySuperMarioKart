@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 30200,
-	"name": "Mario Kart Superb Online",
+	"name": "Superb Mario Kart",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -102,6 +102,14 @@
 						],
 						"subfolders": [],
 						"name": "Logics"
+					},
+					{
+						"items": [
+							"coins",
+							"powerItems"
+						],
+						"subfolders": [],
+						"name": "Items"
 					}
 				],
 				"name": "Map"

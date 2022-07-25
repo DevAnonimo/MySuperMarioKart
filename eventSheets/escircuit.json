@@ -83,6 +83,15 @@
 						"string": "\"left\"",
 						"function": "left"
 					}
+				},
+				{
+					"id": "set-face-visible",
+					"objectClass": "player",
+					"sid": 872523311141607,
+					"parameters": {
+						"face": "back",
+						"visible": false
+					}
 				}
 			],
 			"sid": 155928672402841
@@ -305,6 +314,37 @@
 				}
 			],
 			"sid": 696390232506983
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Items",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "coins",
+							"sid": 438489145501421,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "coins",
+							"sid": 882654218322048
+						}
+					],
+					"sid": 365714333052515
+				}
+			],
+			"sid": 362959751249819
 		},
 		{
 			"eventType": "comment",
