@@ -75,10 +75,11 @@
 	"objectTypes": {
 		"items": [
 			"3DCamera",
-			"camera",
+			"cameraPosition",
 			"player",
 			"Keyboard",
-			"Browser"
+			"Browser",
+			"playerSprite"
 		],
 		"subfolders": [
 			{
@@ -242,9 +243,9 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": true,
+		"pixelRounding": false,
 		"zAxisScale": "normalized",
-		"fov": 0.7853981633974483,
+		"fov": 1.5707963267948966,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "low",

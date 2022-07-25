@@ -27,7 +27,7 @@
 			"actions": [
 				{
 					"id": "pin-to-object-properties",
-					"objectClass": "camera",
+					"objectClass": "cameraPosition",
 					"sid": 441028086962038,
 					"behaviorType": "Pin",
 					"parameters": {
@@ -38,6 +38,22 @@
 						"width-type": "no",
 						"height-type": "no",
 						"z": false
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "playerSprite",
+					"sid": 689846435290173,
+					"disabled": true,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "player",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": true
 					}
 				},
 				{
@@ -86,8 +102,8 @@
 				},
 				{
 					"id": "set-face-visible",
-					"objectClass": "player",
-					"sid": 872523311141607,
+					"objectClass": "playerSprite",
+					"sid": 104835405479175,
 					"parameters": {
 						"face": "back",
 						"visible": false
@@ -112,10 +128,10 @@
 					"sid": 573988114307759,
 					"disabled": true,
 					"parameters": {
-						"cam-x": "camera.X",
-						"cam-y": "camera.Y",
+						"cam-x": "cameraPosition.X",
+						"cam-y": "cameraPosition.Y",
 						"cam-z": "1",
-						"look-angle": "camera.Angle"
+						"look-angle": "cameraPosition.Angle"
 					}
 				},
 				{
@@ -123,8 +139,8 @@
 					"objectClass": "3DCamera",
 					"sid": 812012743467080,
 					"parameters": {
-						"cam-x": "camera.X",
-						"cam-y": "camera.Y",
+						"cam-x": "cameraPosition.X",
+						"cam-y": "cameraPosition.Y",
 						"cam-z": "1.5",
 						"look-x": "player.X",
 						"look-y": "player.Y",
@@ -144,6 +160,84 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 437804826432745
+						}
+					],
+					"actions": [],
+					"sid": 931779960820935,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player",
+									"sid": 221247348261521,
+									"parameters": {
+										"object": "circuitF"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "playerSprite",
+									"sid": 443552253335011,
+									"parameters": {
+										"angle": "player.Angle"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "playerSprite",
+									"sid": 292000894729754,
+									"parameters": {
+										"x": "round(player.X)",
+										"y": "round(player.Y)"
+									}
+								}
+							],
+							"sid": 767360671955366
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 183768742242517
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "playerSprite",
+									"sid": 717834360142251,
+									"parameters": {
+										"angle": "player.Angle"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "playerSprite",
+									"sid": 531993510551473,
+									"parameters": {
+										"x": "player.X",
+										"y": "player.Y"
+									}
+								}
+							],
+							"sid": 688771691235686
+						}
+					]
+				},
 				{
 					"eventType": "comment",
 					"text": "Forward"

@@ -3094,8 +3094,8 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 981.8011873618631,
-								"y": 725.7206678686211,
+								"x": 984.3832338407192,
+								"y": 728.4780154855571,
 								"width": 20.23917952780667,
 								"height": 20.23917952780667,
 								"originX": 0.5,
@@ -3123,8 +3123,8 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 975.2008925432226,
-								"y": 761.9653172551671,
+								"x": 976.1241922080632,
+								"y": 765.6585159145293,
 								"width": 20.23917952780667,
 								"height": 20.23917952780667,
 								"originX": 0.5,
@@ -3152,8 +3152,8 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 941.23437849811,
-								"y": 744.5809172675137,
+								"x": 972.2880683093106,
+								"y": 803.3559658453447,
 								"width": 20.23917952780667,
 								"height": 20.23917952780667,
 								"originX": 0.5,
@@ -3166,6 +3166,66 @@
 								],
 								"angle": 2.675767300675159,
 								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "playerSprite",
+							"properties": {
+								"shape": "box",
+								"z-height": 0.7,
+								"initially-visible": true,
+								"face-back": true,
+								"face-front": false,
+								"face-left": true,
+								"face-right": false,
+								"face-top": false,
+								"face-bottom": false,
+								"z-tiling-factor": 8,
+								"object-back": -1,
+								"object-front": -1,
+								"object-left": 628836089509290,
+								"object-right": -1,
+								"object-top": -1,
+								"object-bottom": -1
+							},
+							"uid": 100,
+							"instanceVariables": {},
+							"behaviors": {
+								"Car": {
+									"properties": {
+										"max-speed": 150,
+										"acceleration": 30,
+										"deceleration": 140,
+										"steer-speed": 80,
+										"drift-recover": 185,
+										"friction": 0.4,
+										"turn-while-stopped": false,
+										"set-angle": true,
+										"default-controls": true,
+										"enabled": false
+									}
+								},
+								"Pin": {
+									"properties": {
+										"destroy": false
+									}
+								}
+							},
+							"world": {
+								"x": 1304,
+								"y": 632,
+								"width": 8,
+								"height": 8,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.71238898038469,
+								"zElevation": 0.01
 							}
 						}
 					],
@@ -3330,7 +3390,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "camera",
+					"type": "cameraPosition",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -3398,7 +3458,7 @@
 					"properties": {
 						"shape": "box",
 						"z-height": 0.7,
-						"initially-visible": true,
+						"initially-visible": false,
 						"face-back": true,
 						"face-front": false,
 						"face-left": true,
