@@ -276,12 +276,7 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
-				{
-					"type": "comment",
-					"text": "Animações"
-				}
-			],
+			"actions": [],
 			"sid": 507711156124345,
 			"children": [
 				{
