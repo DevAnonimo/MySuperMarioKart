@@ -76,6 +76,14 @@
 					"sid": 298718068057908
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 746308049278892,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
 					"callFunction": "prepareAI",
 					"sid": 712992378788208
 				}
@@ -762,6 +770,226 @@
 								}
 							],
 							"sid": 203722023732658
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-path-found",
+							"objectClass": "enemy",
+							"sid": 157472755329452,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "move-along-path",
+							"objectClass": "enemy",
+							"sid": 260416306287472,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 155352143125234
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "enemy",
+							"sid": 416642223895981,
+							"parameters": {
+								"object": "AIPath"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 388843060628967,
+							"parameters": {
+								"type": "warn",
+								"message": "\"Aipath: \" & AIPath.Count"
+							}
+						}
+					],
+					"sid": 651361379489735,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "iidNextObject",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 417868728640751
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 104449888534282,
+									"parameters": {
+										"variable": "iidNextObject",
+										"value": "AIPath.IID + 1"
+									}
+								}
+							],
+							"sid": 973166549785637
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 967786170675739,
+									"parameters": {
+										"first-value": "AIPath.id + 1",
+										"comparison": 0,
+										"second-value": "AIPath.Count"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 252228693861214,
+									"parameters": {
+										"type": "log",
+										"message": "\"Fazendo nova volta\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 748376228874323,
+									"parameters": {
+										"variable": "iidNextObject",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemy",
+									"sid": 858094001523282,
+									"parameters": {
+										"instance-variable": "nextX",
+										"value": "1276.094722"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemy",
+									"sid": 578762972039270,
+									"parameters": {
+										"instance-variable": "nextY",
+										"value": "445.153847"
+									}
+								},
+								{
+									"id": "find-path",
+									"objectClass": "enemy",
+									"sid": 287666133892767,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"x": "Self.nextX",
+										"y": "Self.nextY"
+									}
+								}
+							],
+							"sid": 200287664963089
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 330601348251943
+								},
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 774779089706276,
+									"parameters": {
+										"object": "AIPath"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 430861229186790,
+									"parameters": {
+										"type": "log",
+										"message": "\"Continuando volta\""
+									}
+								}
+							],
+							"sid": 576456687272563,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nth-instance",
+											"objectClass": "System",
+											"sid": 976758564956001,
+											"parameters": {
+												"object": "AIPath",
+												"instance": "iidNextObject"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "AIPath",
+											"sid": 499881790234638,
+											"disabled": true
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemy",
+											"sid": 210088922460787,
+											"parameters": {
+												"instance-variable": "nextX",
+												"value": "AIPath.X"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemy",
+											"sid": 586102206148946,
+											"parameters": {
+												"instance-variable": "nextY",
+												"value": "AIPath.Y"
+											}
+										},
+										{
+											"id": "find-path",
+											"objectClass": "enemy",
+											"sid": 512397890611747,
+											"behaviorType": "Pathfinding",
+											"parameters": {
+												"x": "Self.nextX",
+												"y": "Self.nextY"
+											}
+										}
+									],
+									"sid": 901966049135219
+								}
+							]
 						}
 					]
 				}

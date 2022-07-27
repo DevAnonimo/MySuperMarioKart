@@ -2071,9 +2071,9 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 1283.729017096324,
-								"y": 860.0431313441409,
-								"width": 79.32642859560517,
+								"x": 1281.5817409243077,
+								"y": 859.6195184494544,
+								"width": 83.70375327785273,
 								"height": 83.76267608321186,
 								"originX": 0.5,
 								"originY": 0.5,
@@ -2263,7 +2263,41 @@
 								"angle": 0,
 								"zElevation": 0.001
 							}
-						},
+						}
+					],
+					"sid": 517467213875693,
+					"effectTypes": [],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
+					"name": "AI",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
 						{
 							"type": "AIPath",
 							"properties": {
@@ -2274,7 +2308,9 @@
 								"live-preview": false
 							},
 							"uid": 103,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 0
+							},
 							"behaviors": {},
 							"world": {
 								"x": 1276.094722,
@@ -2303,7 +2339,9 @@
 								"live-preview": false
 							},
 							"uid": 104,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 1
+							},
 							"behaviors": {},
 							"world": {
 								"x": 571.5753418408527,
@@ -2332,7 +2370,9 @@
 								"live-preview": false
 							},
 							"uid": 105,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 2
+							},
 							"behaviors": {},
 							"world": {
 								"x": 460.9077786674364,
@@ -2361,7 +2401,9 @@
 								"live-preview": false
 							},
 							"uid": 106,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 3
+							},
 							"behaviors": {},
 							"world": {
 								"x": 435.7157556865641,
@@ -2390,7 +2432,9 @@
 								"live-preview": false
 							},
 							"uid": 107,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 4
+							},
 							"behaviors": {},
 							"world": {
 								"x": 565.5779942692917,
@@ -2419,7 +2463,9 @@
 								"live-preview": false
 							},
 							"uid": 108,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 5
+							},
 							"behaviors": {},
 							"world": {
 								"x": 856.166259765625,
@@ -2448,7 +2494,9 @@
 								"live-preview": false
 							},
 							"uid": 109,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 6
+							},
 							"behaviors": {},
 							"world": {
 								"x": 1066.9589375250207,
@@ -2477,7 +2525,9 @@
 								"live-preview": false
 							},
 							"uid": 110,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"id": 7
+							},
 							"behaviors": {},
 							"world": {
 								"x": 1246.8828307416743,
@@ -2497,9 +2547,9 @@
 							}
 						}
 					],
-					"sid": 517467213875693,
+					"sid": 129847487227506,
 					"effectTypes": [],
-					"isInitiallyVisible": false,
+					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
 					"color": [
 						1,
@@ -3529,10 +3579,10 @@
 										"cell-size": 30,
 										"cell-border": -1,
 										"obstacles": "custom",
-										"max-speed": 200,
-										"acceleration": 1000,
-										"deceleration": 2000,
-										"rotate-speed": 135,
+										"max-speed": 150,
+										"acceleration": 30,
+										"deceleration": 140,
+										"rotate-speed": 1000,
 										"rotate-object": true,
 										"diagonals": true,
 										"enabled": true
