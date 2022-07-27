@@ -64,6 +64,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Car",
+			"name": "Car",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
@@ -72,8 +80,8 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Car",
-			"name": "Car",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false
@@ -84,10 +92,8 @@
 		"items": [
 			"3DCamera",
 			"cameraPosition",
-			"player",
 			"Keyboard",
 			"Browser",
-			"playerSprite",
 			"Touch"
 		],
 		"subfolders": [
@@ -96,7 +102,7 @@
 					"Mario"
 				],
 				"subfolders": [],
-				"name": "characters"
+				"name": "Sprites characters"
 			},
 			{
 				"items": [
@@ -108,10 +114,11 @@
 					{
 						"items": [
 							"race",
-							"sprint"
+							"sprint",
+							"AIPath"
 						],
 						"subfolders": [],
-						"name": "Logics"
+						"name": "Circuit"
 					},
 					{
 						"items": [
@@ -123,6 +130,23 @@
 					}
 				],
 				"name": "Map"
+			},
+			{
+				"items": [
+					"enemySprite",
+					"enemy"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"player",
+							"playerSprite"
+						],
+						"subfolders": [],
+						"name": "Player"
+					}
+				],
+				"name": "Players"
 			}
 		]
 	},

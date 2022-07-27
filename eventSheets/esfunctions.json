@@ -723,6 +723,250 @@
 				}
 			],
 			"sid": 200181369751818
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "General",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "prepareGamePlayer",
+					"functionDescription": "",
+					"functionCategory": "general",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 834603070409216,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-face-visible",
+									"objectClass": "playerSprite",
+									"sid": 724135679634142,
+									"parameters": {
+										"face": "back",
+										"visible": false
+									}
+								}
+							],
+							"sid": 575888764277822
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 311433479907969,
+									"parameters": {
+										"first-value": "left(Browser.Platform, 1)",
+										"comparison": 0,
+										"second-value": "\"W\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 911802653697355,
+									"parameters": {
+										"first-value": "left(Browser.Platform, 1)",
+										"comparison": 0,
+										"second-value": "\"M\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 797514345382391,
+									"parameters": {
+										"group-name": "\"PC\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 952015861463312,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 929197078033953
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 447394785634191,
+									"parameters": {
+										"group-name": "\"Mobile\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 946598052833187
+						}
+					]
+				},
+				{
+					"functionName": "pins",
+					"functionDescription": "",
+					"functionCategory": "general",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "cameraPosition",
+							"sid": 441028086962038,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "player",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 824638637721256
+				},
+				{
+					"functionName": "mapping",
+					"functionDescription": "",
+					"functionCategory": "general",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Mapping"
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 531062674146986,
+							"parameters": {
+								"name": "\"movement\"",
+								"string": "\"forward\"",
+								"function": "forward"
+							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 473471031402761,
+							"parameters": {
+								"name": "\"movement\"",
+								"string": "\"reverse\"",
+								"function": "reverse"
+							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 776295760945379,
+							"parameters": {
+								"name": "\"movement\"",
+								"string": "\"right\"",
+								"function": "right"
+							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 372177181140009,
+							"parameters": {
+								"name": "\"movement\"",
+								"string": "\"left\"",
+								"function": "left"
+							}
+						}
+					],
+					"sid": 756714192964526
+				}
+			],
+			"sid": 369480973614402
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "AI Controlls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "prepareAI",
+					"functionDescription": "",
+					"functionCategory": "AI",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 365921127803429,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-obstacle",
+									"objectClass": "enemy",
+									"sid": 998445669047066,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"obstacle": "mapColliders"
+									}
+								},
+								{
+									"id": "add-obstacle",
+									"objectClass": "enemy",
+									"sid": 157717753723872,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"obstacle": "player"
+									}
+								},
+								{
+									"id": "find-path",
+									"objectClass": "enemy",
+									"sid": 167059217492792,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"x": "Self.nextX",
+										"y": "Self.nextY"
+									}
+								}
+							],
+							"sid": 966394614462272
+						}
+					]
+				}
+			],
+			"sid": 777570140690850
 		}
 	],
 	"sid": 213071187365425

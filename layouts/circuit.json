@@ -2263,6 +2263,238 @@
 								"angle": 0,
 								"zElevation": 0.001
 							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 103,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 1276.094722,
+								"y": 445.153847,
+								"width": 79.91514771984002,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 5.742843334255712,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 104,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 571.5753418408527,
+								"y": 92.42633448610971,
+								"width": 82.93876415769249,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.677347438375626,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 105,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 460.9077786674364,
+								"y": 142.26579166147664,
+								"width": 73.80415295865141,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 3.665685626506013,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 106,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 435.7157556865641,
+								"y": 715.2892321015837,
+								"width": 82.93876415769249,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 3.0817460410697413,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 107,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 565.5779942692917,
+								"y": 734.6777456530124,
+								"width": 78.85121422607364,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 1.1125535945810798,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 108,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 856.166259765625,
+								"y": 603.8848266601562,
+								"width": 82.93876415769249,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 1.6402168655051383,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 109,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 1066.9589375250207,
+								"y": 916.6023200207655,
+								"width": 82.18181334486923,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 2.2928428214641725,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 110,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 1246.8828307416743,
+								"y": 915.6388893200382,
+								"width": 88.23350645447347,
+								"height": 40.741854471800934,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0.882153414637411,
+								"zElevation": 0.001
+							}
 						}
 					],
 					"sid": 517467213875693,
@@ -3167,66 +3399,6 @@
 								"angle": 2.675767300675159,
 								"zElevation": 0.001
 							}
-						},
-						{
-							"type": "playerSprite",
-							"properties": {
-								"shape": "box",
-								"z-height": 0.7,
-								"initially-visible": true,
-								"face-back": true,
-								"face-front": false,
-								"face-left": true,
-								"face-right": false,
-								"face-top": false,
-								"face-bottom": false,
-								"z-tiling-factor": 8,
-								"object-back": -1,
-								"object-front": -1,
-								"object-left": 628836089509290,
-								"object-right": -1,
-								"object-top": -1,
-								"object-bottom": -1
-							},
-							"uid": 100,
-							"instanceVariables": {},
-							"behaviors": {
-								"Car": {
-									"properties": {
-										"max-speed": 150,
-										"acceleration": 30,
-										"deceleration": 140,
-										"steer-speed": 80,
-										"drift-recover": 185,
-										"friction": 0.4,
-										"turn-while-stopped": false,
-										"set-angle": true,
-										"default-controls": true,
-										"enabled": false
-									}
-								},
-								"Pin": {
-									"properties": {
-										"destroy": false
-									}
-								}
-							},
-							"world": {
-								"x": 1304,
-								"y": 632,
-								"width": 8,
-								"height": 8,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 4.71238898038469,
-								"zElevation": 0.01
-							}
 						}
 					],
 					"sid": 692616082806270,
@@ -3322,10 +3494,264 @@
 			"overriden": 0,
 			"subLayers": [
 				{
+					"name": "enemies",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "enemy",
+							"properties": {
+								"shape": "box",
+								"z-height": 0.7,
+								"initially-visible": true,
+								"face-back": true,
+								"face-front": false,
+								"face-left": true,
+								"face-right": false,
+								"face-top": false,
+								"face-bottom": false,
+								"z-tiling-factor": 8,
+								"object-back": -1,
+								"object-front": -1,
+								"object-left": -1,
+								"object-right": -1,
+								"object-top": -1,
+								"object-bottom": -1
+							},
+							"uid": 101,
+							"instanceVariables": {
+								"nextX": 1276.094722,
+								"nextY": 445.153847
+							},
+							"behaviors": {
+								"Pathfinding": {
+									"properties": {
+										"cell-size": 30,
+										"cell-border": -1,
+										"obstacles": "custom",
+										"max-speed": 200,
+										"acceleration": 1000,
+										"deceleration": 2000,
+										"rotate-speed": 135,
+										"rotate-object": true,
+										"diagonals": true,
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 1270.141845703125,
+								"y": 629.3377075195312,
+								"width": 8,
+								"height": 8,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.71238898038469,
+								"zElevation": 0.01
+							}
+						},
+						{
+							"type": "enemySprite",
+							"properties": {
+								"shape": "box",
+								"z-height": 0.7,
+								"initially-visible": true,
+								"face-back": true,
+								"face-front": false,
+								"face-left": true,
+								"face-right": false,
+								"face-top": false,
+								"face-bottom": false,
+								"z-tiling-factor": 8,
+								"object-back": -1,
+								"object-front": -1,
+								"object-left": 628836089509290,
+								"object-right": -1,
+								"object-top": -1,
+								"object-bottom": -1
+							},
+							"uid": 102,
+							"instanceVariables": {},
+							"behaviors": {
+								"Pin": {
+									"properties": {
+										"destroy": false
+									}
+								}
+							},
+							"world": {
+								"x": 1279.9965546443395,
+								"y": 629.2115021315595,
+								"width": 8,
+								"height": 8,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.71238898038469,
+								"zElevation": 0.01
+							}
+						}
+					],
+					"sid": 674964582392807,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
 					"name": "player",
 					"overriden": 0,
 					"subLayers": [],
-					"instances": [],
+					"instances": [
+						{
+							"type": "playerSprite",
+							"properties": {
+								"shape": "box",
+								"z-height": 0.7,
+								"initially-visible": true,
+								"face-back": true,
+								"face-front": false,
+								"face-left": true,
+								"face-right": false,
+								"face-top": false,
+								"face-bottom": false,
+								"z-tiling-factor": 8,
+								"object-back": -1,
+								"object-front": -1,
+								"object-left": 628836089509290,
+								"object-right": -1,
+								"object-top": -1,
+								"object-bottom": -1
+							},
+							"uid": 100,
+							"instanceVariables": {},
+							"behaviors": {
+								"Car": {
+									"properties": {
+										"max-speed": 150,
+										"acceleration": 30,
+										"deceleration": 140,
+										"steer-speed": 80,
+										"drift-recover": 185,
+										"friction": 0.4,
+										"turn-while-stopped": false,
+										"set-angle": true,
+										"default-controls": true,
+										"enabled": false
+									}
+								},
+								"Pin": {
+									"properties": {
+										"destroy": false
+									}
+								}
+							},
+							"world": {
+								"x": 1304,
+								"y": 632,
+								"width": 8,
+								"height": 8,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.71238898038469,
+								"zElevation": 0.01
+							}
+						},
+						{
+							"type": "player",
+							"properties": {
+								"shape": "box",
+								"z-height": 0.7,
+								"initially-visible": false,
+								"face-back": true,
+								"face-front": false,
+								"face-left": true,
+								"face-right": false,
+								"face-top": false,
+								"face-bottom": false,
+								"z-tiling-factor": 8,
+								"object-back": -1,
+								"object-front": -1,
+								"object-left": 628836089509290,
+								"object-right": -1,
+								"object-top": -1,
+								"object-bottom": -1
+							},
+							"uid": 5,
+							"instanceVariables": {},
+							"behaviors": {
+								"Car": {
+									"properties": {
+										"max-speed": 150,
+										"acceleration": 30,
+										"deceleration": 140,
+										"steer-speed": 80,
+										"drift-recover": 185,
+										"friction": 0.4,
+										"turn-while-stopped": false,
+										"set-angle": true,
+										"default-controls": true,
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 1304,
+								"y": 632,
+								"width": 8,
+								"height": 8,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.71238898038469,
+								"zElevation": 0.01
+							}
+						}
+					],
 					"sid": 480677521495599,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
@@ -3450,61 +3876,6 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0.01
-					}
-				},
-				{
-					"type": "player",
-					"properties": {
-						"shape": "box",
-						"z-height": 0.7,
-						"initially-visible": false,
-						"face-back": true,
-						"face-front": false,
-						"face-left": true,
-						"face-right": false,
-						"face-top": false,
-						"face-bottom": false,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": 628836089509290,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 5,
-					"instanceVariables": {},
-					"behaviors": {
-						"Car": {
-							"properties": {
-								"max-speed": 150,
-								"acceleration": 30,
-								"deceleration": 140,
-								"steer-speed": 80,
-								"drift-recover": 185,
-								"friction": 0.4,
-								"turn-while-stopped": false,
-								"set-angle": true,
-								"default-controls": true,
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 1304,
-						"y": 632,
-						"width": 8,
-						"height": 8,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
 						"zElevation": 0.01
 					}
 				}

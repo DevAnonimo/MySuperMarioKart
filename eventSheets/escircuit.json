@@ -40,6 +40,20 @@
 			"sid": 906585161236157
 		},
 		{
+			"eventType": "comment",
+			"text": "Ai"
+		},
+		{
+			"eventType": "variable",
+			"name": "speed2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 374505489851136
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -50,137 +64,23 @@
 			],
 			"actions": [
 				{
-					"id": "pin-to-object-properties",
-					"objectClass": "cameraPosition",
-					"sid": 441028086962038,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "player",
-						"x": true,
-						"y": true,
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
+					"callFunction": "pins",
+					"sid": 492901620457917
 				},
 				{
-					"type": "comment",
-					"text": "Mapping"
+					"callFunction": "mapping",
+					"sid": 880930684762371
 				},
 				{
-					"id": "map-function",
-					"objectClass": "Functions",
-					"sid": 531062674146986,
-					"parameters": {
-						"name": "\"movement\"",
-						"string": "\"forward\"",
-						"function": "forward"
-					}
+					"callFunction": "prepareGamePlayer",
+					"sid": 298718068057908
 				},
 				{
-					"id": "map-function",
-					"objectClass": "Functions",
-					"sid": 473471031402761,
-					"parameters": {
-						"name": "\"movement\"",
-						"string": "\"reverse\"",
-						"function": "reverse"
-					}
-				},
-				{
-					"id": "map-function",
-					"objectClass": "Functions",
-					"sid": 776295760945379,
-					"parameters": {
-						"name": "\"movement\"",
-						"string": "\"right\"",
-						"function": "right"
-					}
-				},
-				{
-					"id": "map-function",
-					"objectClass": "Functions",
-					"sid": 372177181140009,
-					"parameters": {
-						"name": "\"movement\"",
-						"string": "\"left\"",
-						"function": "left"
-					}
-				},
-				{
-					"id": "set-face-visible",
-					"objectClass": "playerSprite",
-					"sid": 104835405479175,
-					"parameters": {
-						"face": "back",
-						"visible": false
-					}
+					"callFunction": "prepareAI",
+					"sid": 712992378788208
 				}
 			],
-			"sid": 155928672402841,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 604588196605650,
-							"parameters": {
-								"first-value": "left(Browser.Platform, 1)",
-								"comparison": 0,
-								"second-value": "\"W\""
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 974354977508266,
-							"parameters": {
-								"first-value": "left(Browser.Platform, 1)",
-								"comparison": 0,
-								"second-value": "\"M\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 801685687178218,
-							"parameters": {
-								"group-name": "\"PC\"",
-								"state": "activated"
-							}
-						}
-					],
-					"sid": 753075670300111,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 897131449785732
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 146956924423553,
-							"parameters": {
-								"group-name": "\"Mobile\"",
-								"state": "activated"
-							}
-						}
-					],
-					"sid": 522772324036033
-				}
-			]
+			"sid": 155928672402841
 		},
 		{
 			"eventType": "block",
@@ -227,7 +127,16 @@
 							"sid": 437804826432745
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "playerSprite",
+							"sid": 976740279814736,
+							"parameters": {
+								"angle": "player.Angle"
+							}
+						}
+					],
 					"sid": 931779960820935,
 					"children": [
 						{
@@ -244,14 +153,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-angle",
-									"objectClass": "playerSprite",
-									"sid": 443552253335011,
-									"parameters": {
-										"angle": "player.Angle"
-									}
-								},
 								{
 									"id": "set-position",
 									"objectClass": "playerSprite",
@@ -274,14 +175,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-angle",
-									"objectClass": "playerSprite",
-									"sid": 717834360142251,
-									"parameters": {
-										"angle": "player.Angle"
-									}
-								},
 								{
 									"id": "set-position",
 									"objectClass": "playerSprite",
@@ -789,6 +682,91 @@
 				}
 			],
 			"sid": 362959751249819
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "AI",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Out of street"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 669132271192069
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "enemySprite",
+							"sid": 244852189167207,
+							"parameters": {
+								"angle": "enemy.Angle"
+							}
+						}
+					],
+					"sid": 504021684020408,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "enemy",
+									"sid": 395394730737536,
+									"parameters": {
+										"object": "circuitF"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "enemySprite",
+									"sid": 129585712266164,
+									"parameters": {
+										"x": "round(enemy.X)",
+										"y": "round(enemy.Y)"
+									}
+								}
+							],
+							"sid": 182061273174430
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 558125641384813
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "enemySprite",
+									"sid": 484933591579114,
+									"parameters": {
+										"x": "enemy.X",
+										"y": "enemy.Y"
+									}
+								}
+							],
+							"sid": 203722023732658
+						}
+					]
+				}
+			],
+			"sid": 923815920421045
 		},
 		{
 			"eventType": "comment",
