@@ -65,22 +65,6 @@
 					}
 				},
 				{
-					"id": "pin-to-object-properties",
-					"objectClass": "playerSprite",
-					"sid": 689846435290173,
-					"disabled": true,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "player",
-						"x": true,
-						"y": true,
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": true
-					}
-				},
-				{
 					"type": "comment",
 					"text": "Mapping"
 				},
@@ -134,7 +118,69 @@
 					}
 				}
 			],
-			"sid": 155928672402841
+			"sid": 155928672402841,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 604588196605650,
+							"parameters": {
+								"first-value": "left(Browser.Platform, 1)",
+								"comparison": 0,
+								"second-value": "\"W\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 974354977508266,
+							"parameters": {
+								"first-value": "left(Browser.Platform, 1)",
+								"comparison": 0,
+								"second-value": "\"M\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 801685687178218,
+							"parameters": {
+								"group-name": "\"PC\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 753075670300111,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 897131449785732
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 146956924423553,
+							"parameters": {
+								"group-name": "\"Mobile\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 522772324036033
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -146,18 +192,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "look-parallel-to-layout",
-					"objectClass": "3DCamera",
-					"sid": 573988114307759,
-					"disabled": true,
-					"parameters": {
-						"cam-x": "cameraPosition.X",
-						"cam-y": "cameraPosition.Y",
-						"cam-z": "1",
-						"look-angle": "cameraPosition.Angle"
-					}
-				},
 				{
 					"id": "look-at-position",
 					"objectClass": "3DCamera",
@@ -690,6 +724,68 @@
 						}
 					],
 					"sid": 365714333052515
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "powerItems",
+							"sid": 899842645374628,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 180219139805183,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 362809033124176,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 956064215451854,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"callFunction": "getItems",
+									"sid": 860979856477782
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 344327692223443,
+									"parameters": {
+										"seconds": "25"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 562978937104931,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 292580865410964
+						}
+					]
 				}
 			],
 			"sid": 362959751249819

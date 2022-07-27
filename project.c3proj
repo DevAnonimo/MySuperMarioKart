@@ -246,12 +246,12 @@
 		]
 	},
 	"properties": {
-		"description": "",
+		"description": "Teste",
 		"version": "1.0.0.0",
-		"author": "",
+		"author": "Gui",
 		"authorEmail": "",
 		"authorWebsite": "",
-		"appId": "",
+		"appId": "com.alien.superbmariokart",
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 1.5707963267948966,
