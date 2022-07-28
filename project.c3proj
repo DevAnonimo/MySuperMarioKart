@@ -99,7 +99,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"Mario"
+					"Mario",
+					"Bowser"
 				],
 				"subfolders": [],
 				"name": "Sprites characters"
