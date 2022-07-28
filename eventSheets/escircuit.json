@@ -745,6 +745,16 @@
 										"x": "round(enemy.X)",
 										"y": "round(enemy.Y)"
 									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "enemy",
+									"sid": 306555957641290,
+									"disabled": true,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"speed": "30"
+									}
 								}
 							],
 							"sid": 182061273174430
@@ -756,6 +766,15 @@
 									"id": "else",
 									"objectClass": "System",
 									"sid": 558125641384813
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "enemy",
+									"sid": 629049901709955,
+									"parameters": {
+										"object": "sprint"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -767,9 +786,66 @@
 										"x": "enemy.X",
 										"y": "enemy.Y"
 									}
+								},
+								{
+									"id": "set-acceleration",
+									"objectClass": "enemy",
+									"sid": 302080850318921,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"acceleration": "30"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "enemy",
+									"sid": 561080680121375,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"speed": "150"
+									}
 								}
 							],
 							"sid": 203722023732658
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 302304976833314
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "enemy",
+									"sid": 442567882761810,
+									"parameters": {
+										"object": "sprint"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "enemy",
+									"sid": 658999143940793,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"acceleration": "sprint.newAcceleration"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "enemy",
+									"sid": 184457143302249,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"speed": "sprint.newVelocity"
+									}
+								}
+							],
+							"sid": 633960009283821
 						}
 					]
 				},
@@ -805,17 +881,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 388843060628967,
-							"parameters": {
-								"type": "warn",
-								"message": "\"Aipath: \" & AIPath.Count"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 651361379489735,
 					"children": [
 						{
@@ -859,15 +925,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 252228693861214,
-									"parameters": {
-										"type": "log",
-										"message": "\"Fazendo nova volta\""
-									}
-								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
@@ -925,17 +982,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 430861229186790,
-									"parameters": {
-										"type": "log",
-										"message": "\"Continuando volta\""
-									}
-								}
-							],
+							"actions": [],
 							"sid": 576456687272563,
 							"children": [
 								{
