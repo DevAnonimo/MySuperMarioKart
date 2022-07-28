@@ -85,6 +85,39 @@
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 276601791845325,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 216886839044858,
+									"parameters": {
+										"mode": "centered",
+										"navigation-ui": "auto"
+									}
+								},
+								{
+									"id": "lock-orientation",
+									"objectClass": "Browser",
+									"sid": 538016020323224,
+									"parameters": {
+										"orientation": "landscape"
+									}
+								},
+								{
+									"id": "vibrate",
+									"objectClass": "Browser",
+									"sid": 337827253099042,
+									"parameters": {
+										"pattern": "\"200,100,200\""
+									}
+								},
+								{
 									"id": "set-group-active",
 									"objectClass": "System",
 									"sid": 803809373420211,
@@ -210,13 +243,21 @@
 							"conditions": [],
 							"actions": [
 								{
-									"id": "add-path-cost",
+									"id": "add-obstacle",
 									"objectClass": "enemy",
-									"sid": 322037821891330,
+									"sid": 684814257601721,
 									"behaviorType": "Pathfinding",
 									"parameters": {
-										"object": "circuitF",
-										"cost": "100"
+										"obstacle": "mapColliders"
+									}
+								},
+								{
+									"id": "add-obstacle",
+									"objectClass": "enemy",
+									"sid": 885747070755669,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"obstacle": "player"
 									}
 								},
 								{

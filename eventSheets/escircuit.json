@@ -78,9 +78,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 746308049278892,
+					"sid": 729244319230945,
 					"parameters": {
-						"seconds": "1"
+						"seconds": "2"
 					}
 				},
 				{
@@ -749,11 +749,10 @@
 								{
 									"id": "set-speed",
 									"objectClass": "enemy",
-									"sid": 306555957641290,
-									"disabled": true,
+									"sid": 211647916201364,
 									"behaviorType": "Pathfinding",
 									"parameters": {
-										"speed": "30"
+										"speed": "50"
 									}
 								}
 							],
@@ -766,15 +765,6 @@
 									"id": "else",
 									"objectClass": "System",
 									"sid": 558125641384813
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "enemy",
-									"sid": 629049901709955,
-									"parameters": {
-										"object": "sprint"
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [
@@ -786,68 +776,82 @@
 										"x": "enemy.X",
 										"y": "enemy.Y"
 									}
-								},
-								{
-									"id": "set-acceleration",
-									"objectClass": "enemy",
-									"sid": 302080850318921,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"acceleration": "30"
-									}
-								},
-								{
-									"id": "set-max-speed",
-									"objectClass": "enemy",
-									"sid": 561080680121375,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"speed": "150"
-									}
 								}
 							],
-							"sid": 203722023732658
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+							"sid": 203722023732658,
+							"children": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 302304976833314
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "sprint",
+											"sid": 251353626094512,
+											"parameters": {
+												"object": "enemy"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-acceleration",
+											"objectClass": "enemy",
+											"sid": 343668013501397,
+											"behaviorType": "Pathfinding",
+											"parameters": {
+												"acceleration": "sprint.newAcceleration"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "enemy",
+											"sid": 136159287620273,
+											"behaviorType": "Pathfinding",
+											"parameters": {
+												"speed": "sprint.newVelocity"
+											}
+										}
+									],
+									"sid": 195524731868092
 								},
 								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "enemy",
-									"sid": 442567882761810,
-									"parameters": {
-										"object": "sprint"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 756516740116016
+										}
+									],
+									"actions": [
+										{
+											"id": "set-acceleration",
+											"objectClass": "enemy",
+											"sid": 494315411125250,
+											"behaviorType": "Pathfinding",
+											"parameters": {
+												"acceleration": "30"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "player",
+											"sid": 964665871803151,
+											"behaviorType": "Car",
+											"parameters": {
+												"max-speed": "150"
+											}
+										}
+									],
+									"sid": 669310050150864
 								}
-							],
-							"actions": [
-								{
-									"id": "set-acceleration",
-									"objectClass": "enemy",
-									"sid": 658999143940793,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"acceleration": "sprint.newAcceleration"
-									}
-								},
-								{
-									"id": "set-max-speed",
-									"objectClass": "enemy",
-									"sid": 184457143302249,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"speed": "sprint.newVelocity"
-									}
-								}
-							],
-							"sid": 633960009283821
+							]
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Movement"
 				},
 				{
 					"eventType": "block",
@@ -1037,6 +1041,93 @@
 									"sid": 901966049135219
 								}
 							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Items"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "coins",
+							"sid": 218993546646940,
+							"parameters": {
+								"object": "enemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "coins",
+							"sid": 295957724009234
+						}
+					],
+					"sid": 425602839396391
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "powerItems",
+							"sid": 888375812629434,
+							"parameters": {
+								"object": "enemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 458278666695084,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 298683268850560,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 874837759711929,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"callFunction": "getItems",
+									"sid": 202428305898646
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 166585292342065,
+									"parameters": {
+										"seconds": "25"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 590775364262251,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 601002208356575
 						}
 					]
 				}
