@@ -172,7 +172,7 @@
 								"originalSource": "",
 								"exportFormat": "png",
 								"exportQuality": 0.8,
-								"imageSpriteId": 9033790,
+								"imageSpriteId": 148127,
 								"collisionPoly": {
 									"points": [
 										0,
@@ -204,7 +204,7 @@
 								"originalSource": "",
 								"exportFormat": "png",
 								"exportQuality": 0.8,
-								"imageSpriteId": 1542632,
+								"imageSpriteId": 8597745,
 								"collisionPoly": {
 									"points": [
 										0,
@@ -236,39 +236,7 @@
 								"originalSource": "",
 								"exportFormat": "png",
 								"exportQuality": 0.8,
-								"imageSpriteId": 5671480,
-								"collisionPoly": {
-									"points": [
-										0,
-										1,
-										1,
-										0,
-										1,
-										1,
-										1,
-										1,
-										1,
-										1,
-										1,
-										1,
-										0,
-										1,
-										0,
-										1
-									]
-								},
-								"useCollisionPoly": true,
-								"duration": 1
-							},
-							{
-								"width": 29,
-								"height": 32,
-								"originX": 0.5,
-								"originY": 0.5,
-								"originalSource": "",
-								"exportFormat": "png",
-								"exportQuality": 0.8,
-								"imageSpriteId": 3828784,
+								"imageSpriteId": 992917,
 								"collisionPoly": {
 									"points": [
 										0,
@@ -585,38 +553,6 @@
 								"exportFormat": "png",
 								"exportQuality": 0.8,
 								"imageSpriteId": 897017,
-								"collisionPoly": {
-									"points": [
-										1,
-										1,
-										1,
-										1,
-										0,
-										1,
-										0,
-										1,
-										0,
-										1,
-										0,
-										1,
-										0,
-										0,
-										1,
-										1
-									]
-								},
-								"useCollisionPoly": true,
-								"duration": 1
-							},
-							{
-								"width": 29,
-								"height": 32,
-								"originX": 0.5,
-								"originY": 0.5,
-								"originalSource": "",
-								"exportFormat": "png",
-								"exportQuality": 0.8,
-								"imageSpriteId": 7192442,
 								"collisionPoly": {
 									"points": [
 										1,
