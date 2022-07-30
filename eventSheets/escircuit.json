@@ -104,12 +104,29 @@
 					"id": "look-at-position",
 					"objectClass": "3DCamera",
 					"sid": 812012743467080,
+					"disabled": true,
 					"parameters": {
 						"cam-x": "cameraPosition.X",
 						"cam-y": "cameraPosition.Y",
 						"cam-z": "1.5",
 						"look-x": "player.X",
 						"look-y": "player.Y",
+						"look-z": "0.5",
+						"up-x": "0",
+						"up-y": "0",
+						"up-z": "1"
+					}
+				},
+				{
+					"id": "look-at-position",
+					"objectClass": "3DCamera",
+					"sid": 717497818724082,
+					"parameters": {
+						"cam-x": "cameraPosition.X",
+						"cam-y": "cameraPosition.Y",
+						"cam-z": "1.5",
+						"look-x": "enemy.X",
+						"look-y": "enemy.Y",
 						"look-z": "0.5",
 						"up-x": "0",
 						"up-y": "0",
@@ -606,6 +623,10 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Player"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -685,6 +706,93 @@
 								}
 							],
 							"sid": 292580865410964
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Enemy"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "coins",
+							"sid": 684430033458131,
+							"parameters": {
+								"object": "enemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "coins",
+							"sid": 888405696434892
+						}
+					],
+					"sid": 922423909587207
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "powerItems",
+							"sid": 778739489358873,
+							"parameters": {
+								"object": "enemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 845658806239536,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 895926677988162,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 148949488772558,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"callFunction": "getItems",
+									"sid": 226753797193830
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 850803560311039,
+									"parameters": {
+										"seconds": "25"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "powerItems",
+									"sid": 690633581806431,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 967880517339939
 						}
 					]
 				}
@@ -1041,93 +1149,6 @@
 									"sid": 901966049135219
 								}
 							]
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Items"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "coins",
-							"sid": 218993546646940,
-							"parameters": {
-								"object": "enemy"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "coins",
-							"sid": 295957724009234
-						}
-					],
-					"sid": 425602839396391
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "powerItems",
-							"sid": 888375812629434,
-							"parameters": {
-								"object": "enemy"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 458278666695084,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "powerItems",
-									"sid": 298683268850560,
-									"parameters": {
-										"comparison": 0,
-										"number": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "powerItems",
-									"sid": 874837759711929,
-									"parameters": {
-										"frame-number": "1"
-									}
-								},
-								{
-									"callFunction": "getItems",
-									"sid": 202428305898646
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 166585292342065,
-									"parameters": {
-										"seconds": "25"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "powerItems",
-									"sid": 590775364262251,
-									"parameters": {
-										"frame-number": "0"
-									}
-								}
-							],
-							"sid": 601002208356575
 						}
 					]
 				}

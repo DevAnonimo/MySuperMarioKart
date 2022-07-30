@@ -64,14 +64,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Car",
-			"name": "Car",
-			"author": "Scirra",
-			"version": "r302",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
@@ -82,6 +74,14 @@
 			"type": "behavior",
 			"id": "Pathfinding",
 			"name": "Pathfinding",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Car",
+			"name": "Car",
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false
@@ -137,17 +137,16 @@
 					"enemySprite",
 					"enemy"
 				],
-				"subfolders": [
-					{
-						"items": [
-							"player",
-							"playerSprite"
-						],
-						"subfolders": [],
-						"name": "Player"
-					}
+				"subfolders": [],
+				"name": "Enemy"
+			},
+			{
+				"items": [
+					"player",
+					"playerSprite"
 				],
-				"name": "Players"
+				"subfolders": [],
+				"name": "Player"
 			}
 		]
 	},

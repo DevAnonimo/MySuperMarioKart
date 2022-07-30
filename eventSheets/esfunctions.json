@@ -145,9 +145,25 @@
 							"id": "pin-to-object-properties",
 							"objectClass": "cameraPosition",
 							"sid": 815163016719189,
+							"disabled": true,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "player",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "cameraPosition",
+							"sid": 331118205526084,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "enemy",
 								"x": true,
 								"y": true,
 								"angle": true,
