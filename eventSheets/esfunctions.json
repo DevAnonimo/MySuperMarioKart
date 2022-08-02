@@ -268,6 +268,17 @@
 									}
 								},
 								{
+									"id": "add-path-cost",
+									"objectClass": "enemy",
+									"sid": 212107469906175,
+									"disabled": true,
+									"behaviorType": "Pathfinding",
+									"parameters": {
+										"object": "roughtTerrain",
+										"cost": "54"
+									}
+								},
+								{
 									"id": "add-obstacle",
 									"objectClass": "enemy",
 									"sid": 885747070755669,
@@ -285,9 +296,187 @@
 										"x": "Self.nextX",
 										"y": "Self.nextY"
 									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 224617331252957,
+									"parameters": {
+										"variable": "forward",
+										"value": "true"
+									}
 								}
 							],
 							"sid": 941202343982141
+						}
+					]
+				},
+				{
+					"functionName": "defineMovement",
+					"functionDescription": "",
+					"functionCategory": "AI",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 484510616258166,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 205355622527308,
+									"parameters": {
+										"first-value": "enemy.Y",
+										"comparison": 4,
+										"second-value": "enemy.nextY"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 727020934191571,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Virar para a esquerda"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 200757783413478,
+											"parameters": {
+												"first-value": "enemy.X",
+												"comparison": 4,
+												"second-value": "enemy.nextX"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 498690365008492,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 702081862873178,
+													"parameters": {
+														"first-value": "enemy.Angle",
+														"comparison": 4,
+														"second-value": "round(enemy.nextAngle)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 322346462585551,
+													"parameters": {
+														"variable": "leftTurn",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 526434070052721
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 100985809341575
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 162507224483486,
+													"parameters": {
+														"first-value": "enemy.Angle",
+														"comparison": 2,
+														"second-value": "round(enemy.nextAngle)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 524574851778121,
+													"parameters": {
+														"variable": "rightTurn",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 191961786964758
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 861816903806898
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 326991760922504,
+													"parameters": {
+														"variable": "rightTurn",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 146540041007513,
+													"parameters": {
+														"variable": "leftTurn",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 867626730256871
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 247205147168208
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "enemy",
+									"sid": 482620485262548,
+									"behaviorType": "Car",
+									"parameters": {
+										"control": "brake"
+									}
+								}
+							],
+							"sid": 539089995009478,
+							"disabled": true
 						}
 					]
 				}

@@ -16,6 +16,16 @@
 			"sid": 130630894789800
 		},
 		{
+			"eventType": "variable",
+			"name": "iidNextObject",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 901815877983941
+		},
+		{
 			"eventType": "comment",
 			"text": "Mobile"
 		},
@@ -52,6 +62,36 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 374505489851136
+		},
+		{
+			"eventType": "variable",
+			"name": "forward",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 575934900693100
+		},
+		{
+			"eventType": "variable",
+			"name": "leftTurn",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 342209114496457
+		},
+		{
+			"eventType": "variable",
+			"name": "rightTurn",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 969011274894049
 		},
 		{
 			"eventType": "block",
@@ -857,8 +897,9 @@
 								{
 									"id": "set-speed",
 									"objectClass": "enemy",
-									"sid": 211647916201364,
-									"behaviorType": "Pathfinding",
+									"sid": 628816025838156,
+									"disabled": true,
+									"behaviorType": "Car",
 									"parameters": {
 										"speed": "50"
 									}
@@ -904,8 +945,9 @@
 										{
 											"id": "set-acceleration",
 											"objectClass": "enemy",
-											"sid": 343668013501397,
-											"behaviorType": "Pathfinding",
+											"sid": 374749639876138,
+											"disabled": true,
+											"behaviorType": "Car",
 											"parameters": {
 												"acceleration": "sprint.newAcceleration"
 											}
@@ -913,10 +955,11 @@
 										{
 											"id": "set-max-speed",
 											"objectClass": "enemy",
-											"sid": 136159287620273,
-											"behaviorType": "Pathfinding",
+											"sid": 369251208205865,
+											"disabled": true,
+											"behaviorType": "Car",
 											"parameters": {
-												"speed": "sprint.newVelocity"
+												"max-speed": "sprint.newVelocity"
 											}
 										}
 									],
@@ -935,16 +978,18 @@
 										{
 											"id": "set-acceleration",
 											"objectClass": "enemy",
-											"sid": 494315411125250,
-											"behaviorType": "Pathfinding",
+											"sid": 136327258419946,
+											"disabled": true,
+											"behaviorType": "Car",
 											"parameters": {
 												"acceleration": "30"
 											}
 										},
 										{
 											"id": "set-max-speed",
-											"objectClass": "player",
-											"sid": 964665871803151,
+											"objectClass": "enemy",
+											"sid": 396059988048636,
+											"disabled": true,
 											"behaviorType": "Car",
 											"parameters": {
 												"max-speed": "150"
@@ -959,7 +1004,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Movement"
+					"text": "Path"
 				},
 				{
 					"eventType": "block",
@@ -971,15 +1016,47 @@
 							"behaviorType": "Pathfinding"
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 155352143125234,
+					"children": [
 						{
-							"id": "move-along-path",
-							"objectClass": "enemy",
-							"sid": 260416306287472,
-							"behaviorType": "Pathfinding"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 446563736099670,
+									"parameters": {
+										"count": "enemy.Pathfinding.NodeCount"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 117951522366200,
+									"parameters": {
+										"object-to-create": "nodeIndicator",
+										"layer": "\"HUD\"",
+										"x": "enemy.Pathfinding.NodeXAt(loopindex)",
+										"y": "enemy.Pathfinding.NodeYAt(loopindex)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "nodeIndicator",
+									"sid": 279141785065298,
+									"parameters": {
+										"angle": "enemy.Pathfinding.NodeXAt(loopindex + 1)"
+									}
+								}
+							],
+							"sid": 921245843200908
 						}
-					],
-					"sid": 155352143125234
+					]
 				},
 				{
 					"eventType": "block",
@@ -993,34 +1070,28 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "nodeIndicator",
+							"sid": 909792620429986
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 224271067137553,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "AIPath.Count"
+							}
+						}
+					],
 					"sid": 651361379489735,
 					"children": [
 						{
-							"eventType": "variable",
-							"name": "iidNextObject",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 417868728640751
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 104449888534282,
-									"parameters": {
-										"variable": "iidNextObject",
-										"value": "AIPath.IID + 1"
-									}
-								}
-							],
-							"sid": 973166549785637
+							"eventType": "comment",
+							"text": "Se for o último collider"
 						},
 						{
 							"eventType": "block",
@@ -1028,9 +1099,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 967786170675739,
+									"sid": 897600011419570,
 									"parameters": {
-										"first-value": "AIPath.id + 1",
+										"first-value": "AIPath.id",
 										"comparison": 0,
 										"second-value": "AIPath.Count"
 									}
@@ -1040,28 +1111,37 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 748376228874323,
+									"sid": 580235526323963,
 									"parameters": {
 										"variable": "iidNextObject",
-										"value": "0"
+										"value": "1"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "enemy",
-									"sid": 858094001523282,
+									"sid": 167403380212510,
 									"parameters": {
 										"instance-variable": "nextX",
-										"value": "1276.094722"
+										"value": "1287.615116"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "enemy",
-									"sid": 578762972039270,
+									"sid": 910110789621279,
 									"parameters": {
 										"instance-variable": "nextY",
-										"value": "445.153847"
+										"value": "494.231977"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemy",
+									"sid": 445484910960153,
+									"parameters": {
+										"instance-variable": "nextAngle",
+										"value": "270"
 									}
 								},
 								{
@@ -1076,6 +1156,10 @@
 								}
 							],
 							"sid": 200287664963089
+						},
+						{
+							"eventType": "comment",
+							"text": "Se for qualquer colider"
 						},
 						{
 							"eventType": "block",
@@ -1094,29 +1178,35 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 153381691567942,
+									"parameters": {
+										"variable": "iidNextObject",
+										"value": "1"
+									}
+								}
+							],
 							"sid": 576456687272563,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-nth-instance",
+											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 976758564956001,
+											"sid": 821036870007332,
 											"parameters": {
 												"object": "AIPath",
-												"instance": "iidNextObject"
+												"expression": "AIPath.id",
+												"comparison": 0,
+												"value": "iidNextObject"
 											}
 										}
 									],
 									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "AIPath",
-											"sid": 499881790234638,
-											"disabled": true
-										},
 										{
 											"id": "set-instvar-value",
 											"objectClass": "enemy",
@@ -1144,11 +1234,190 @@
 												"x": "Self.nextX",
 												"y": "Self.nextY"
 											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "AIPath",
+											"sid": 144842253006751,
+											"disabled": true
 										}
 									],
-									"sid": 901966049135219
+									"sid": 901966049135219,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 942383911373666,
+													"parameters": {
+														"first-value": "iidNextObject",
+														"comparison": 1,
+														"second-value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "enemy",
+													"sid": 797652169443629,
+													"parameters": {
+														"instance-variable": "nextAngle",
+														"value": "AIPath.Angle"
+													}
+												}
+											],
+											"sid": 939960898250383
+										}
+									]
 								}
 							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Movement"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 409747104557258
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "defineMovement",
+							"sid": 503379806461583
+						}
+					],
+					"sid": 302591183285384,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 484316014417592,
+									"parameters": {
+										"variable": "forward"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "enemy",
+									"sid": 879045072185170,
+									"behaviorType": "Car",
+									"parameters": {
+										"control": "accelerate"
+									}
+								}
+							],
+							"sid": 806831281554674
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 927459597856746
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "enemy",
+									"sid": 306486024561906,
+									"disabled": true,
+									"behaviorType": "Car",
+									"parameters": {
+										"control": "brake"
+									}
+								}
+							],
+							"sid": 938852671220091
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 971759747457431,
+									"parameters": {
+										"variable": "leftTurn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "enemy",
+									"sid": 920173970968832,
+									"behaviorType": "Car",
+									"parameters": {
+										"control": "steer-left"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 252569662360197,
+									"parameters": {
+										"variable": "rightTurn",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 751649095190560
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 920710403235112
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 227518294348146,
+									"parameters": {
+										"variable": "rightTurn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "enemy",
+									"sid": 570747255210873,
+									"behaviorType": "Car",
+									"parameters": {
+										"control": "steer-right"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 398389228423685,
+									"parameters": {
+										"variable": "leftTurn",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 460587071261000
 						}
 					]
 				}

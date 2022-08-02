@@ -15,6 +15,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 475219382360318
+		},
+		{
+			"name": "nextAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 715983100742268
 		}
 	],
 	"behaviorTypes": [
@@ -22,6 +28,11 @@
 			"behaviorId": "Pathfinding",
 			"name": "Pathfinding",
 			"sid": 234493534771068
+		},
+		{
+			"behaviorId": "Car",
+			"name": "Car",
+			"sid": 111811450557139
 		}
 	],
 	"effectTypes": [],
