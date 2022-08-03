@@ -1262,10 +1262,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "enemy",
-													"sid": 797652169443629,
+													"sid": 891391951032676,
 													"parameters": {
 														"instance-variable": "nextAngle",
-														"value": "AIPath.Angle"
+														"value": "int(AIPath.Angle)"
 													}
 												}
 											],

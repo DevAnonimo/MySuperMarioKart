@@ -324,134 +324,171 @@
 					"sid": 484510616258166,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "Curva 1"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "is-between-values",
 									"objectClass": "System",
-									"sid": 205355622527308,
+									"sid": 355435034222415,
 									"parameters": {
-										"first-value": "enemy.Y",
-										"comparison": 4,
-										"second-value": "enemy.nextY"
+										"value": "enemy.Angle",
+										"lower-bound": "260",
+										"upper-bound": "280"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 727020934191571,
+							"sid": 222620503587246,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "Virar para a esquerda"
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 860158193720032,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "270"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 290997006830276,
+											"parameters": {
+												"variable": "forward",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 395023528977945
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "else",
 											"objectClass": "System",
-											"sid": 200757783413478,
+											"sid": 793028002647427
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 898521098229596,
 											"parameters": {
-												"first-value": "enemy.X",
-												"comparison": 4,
-												"second-value": "enemy.nextX"
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "206"
 											}
 										}
 									],
-									"actions": [],
-									"sid": 498690365008492,
-									"children": [
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 702081862873178,
-													"parameters": {
-														"first-value": "enemy.Angle",
-														"comparison": 4,
-														"second-value": "round(enemy.nextAngle)"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 322346462585551,
-													"parameters": {
-														"variable": "leftTurn",
-														"value": "true"
-													}
-												}
-											],
-											"sid": 526434070052721
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 100985809341575
-												},
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 162507224483486,
-													"parameters": {
-														"first-value": "enemy.Angle",
-														"comparison": 2,
-														"second-value": "round(enemy.nextAngle)"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 524574851778121,
-													"parameters": {
-														"variable": "rightTurn",
-														"value": "true"
-													}
-												}
-											],
-											"sid": 191961786964758
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 861816903806898
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 326991760922504,
-													"parameters": {
-														"variable": "rightTurn",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 146540041007513,
-													"parameters": {
-														"variable": "leftTurn",
-														"value": "false"
-													}
-												}
-											],
-											"sid": 867626730256871
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 531965271423851,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "true"
+											}
 										}
-									]
+									],
+									"sid": 913897340620254
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Curva 2"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 381557178799771
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 881526878470258,
+									"parameters": {
+										"value": "enemy.Angle",
+										"lower-bound": "200",
+										"upper-bound": "209"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 520275980660962,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 377716195736898,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "206"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 501161085563139,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 939303198896646
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 762939019778503
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 724090252386655,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "115"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 794257537032687,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 755428479755217
 								}
 							]
 						},
@@ -461,22 +498,380 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 247205147168208
-								}
-							],
-							"actions": [
+									"sid": 304767148341151
+								},
 								{
-									"id": "simulate-control",
-									"objectClass": "enemy",
-									"sid": 482620485262548,
-									"behaviorType": "Car",
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 687541847570479,
 									"parameters": {
-										"control": "brake"
+										"value": "enemy.Angle",
+										"lower-bound": "112",
+										"upper-bound": "114"
 									}
 								}
 							],
-							"sid": 539089995009478,
-							"disabled": true
+							"actions": [],
+							"sid": 874542143201218,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 314347935639558,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 273536287865344,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 635939914038987
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Curva 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 107905794011365
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 988461595242407,
+									"parameters": {
+										"value": "enemy.Angle",
+										"lower-bound": "88",
+										"upper-bound": "92"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 943234064860881,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 677464687638260,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 434403422953560,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 433369356687506,
+											"parameters": {
+												"variable": "rightTurn",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 639576213330506
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 186355826565916
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 578617298981395,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "333"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 708821030088472,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 522176258442737
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Curva 4"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 251289927724021
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 700708226200293,
+									"parameters": {
+										"value": "enemy.Angle",
+										"lower-bound": "330",
+										"upper-bound": "336"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 582111503937496,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 728004684061791,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "333"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 973137726382649,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 400368841553638
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 605381704509574
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 105217503247930,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "63"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 163318459792396,
+											"parameters": {
+												"variable": "rightTurn",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 504224324063647
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Curva 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 303959016662711
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 966313473909972,
+									"parameters": {
+										"value": "enemy.Angle",
+										"lower-bound": "78",
+										"upper-bound": "80"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 150441081368116,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 124274490839026,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "63"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 664925716100746,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 123985293208689,
+											"parameters": {
+												"variable": "rightTurn",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 867122194769190
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 513385439580117
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 589571262672179,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 719622381213726,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 352595728812725
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 177262034309168
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 439133240805211,
+									"parameters": {
+										"value": "enemy.Angle",
+										"lower-bound": "1",
+										"upper-bound": "3"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 926721544159227,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 946311654578652,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "310"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 494067133269970,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 490159569723469
+								}
+							]
 						}
 					]
 				}

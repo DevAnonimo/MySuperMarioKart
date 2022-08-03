@@ -2530,8 +2530,8 @@
 							},
 							"behaviors": {},
 							"world": {
-								"x": 1205.6316676659424,
-								"y": 934.1698154717363,
+								"x": 1147.8434596703803,
+								"y": 939.9486362712925,
 								"width": 45.7978948622138,
 								"height": 82.74199270430374,
 								"originX": 0.5,
@@ -2542,7 +2542,7 @@
 									1,
 									1
 								],
-								"angle": 6.078610079382454,
+								"angle": 0.028485734665809725,
 								"zElevation": 0.001
 							}
 						},
@@ -3011,6 +3011,37 @@
 									1
 								],
 								"angle": 1.5707963267948966,
+								"zElevation": 0.001
+							}
+						},
+						{
+							"type": "AIPath",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 129,
+							"instanceVariables": {
+								"id": 11
+							},
+							"behaviors": {},
+							"world": {
+								"x": 1250.0330636213216,
+								"y": 915.3600027849283,
+								"width": 45.7978948622138,
+								"height": 82.74199270430374,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 5.425008575423931,
 								"zElevation": 0.001
 							}
 						}
@@ -4062,7 +4093,7 @@
 										"max-speed": 150,
 										"acceleration": 30,
 										"deceleration": 140,
-										"steer-speed": 30,
+										"steer-speed": 80,
 										"drift-recover": 185,
 										"friction": 0.4,
 										"turn-while-stopped": false,
