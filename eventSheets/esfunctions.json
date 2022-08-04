@@ -140,40 +140,48 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 653110286917616,
+					"children": [
 						{
-							"id": "pin-to-object-properties",
-							"objectClass": "cameraPosition",
-							"sid": 815163016719189,
-							"disabled": true,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "player",
-								"x": true,
-								"y": true,
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
-							}
-						},
-						{
-							"id": "pin-to-object-properties",
-							"objectClass": "cameraPosition",
-							"sid": 331118205526084,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "enemy",
-								"x": true,
-								"y": true,
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
-							}
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "cameraPosition",
+									"sid": 545316929868455,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "player",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "cameraPosition",
+									"sid": 697736709377045,
+									"disabled": true,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "enemy",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								}
+							],
+							"sid": 624185451124261
 						}
-					],
-					"sid": 653110286917616
+					]
 				},
 				{
 					"functionName": "mapping",
@@ -184,53 +192,92 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
+					"actions": [],
+					"sid": 670949705880470,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Mapping"
+								},
+								{
+									"id": "map-function",
+									"objectClass": "Functions",
+									"sid": 345992370915341,
+									"parameters": {
+										"name": "\"movement\"",
+										"string": "\"forward\"",
+										"function": "forward"
+									}
+								},
+								{
+									"id": "map-function",
+									"objectClass": "Functions",
+									"sid": 844600297777254,
+									"parameters": {
+										"name": "\"movement\"",
+										"string": "\"reverse\"",
+										"function": "reverse"
+									}
+								},
+								{
+									"id": "map-function",
+									"objectClass": "Functions",
+									"sid": 126534850338986,
+									"parameters": {
+										"name": "\"movement\"",
+										"string": "\"right\"",
+										"function": "right"
+									}
+								},
+								{
+									"id": "map-function",
+									"objectClass": "Functions",
+									"sid": 538809841612395,
+									"parameters": {
+										"name": "\"movement\"",
+										"string": "\"left\"",
+										"function": "left"
+									}
+								}
+							],
+							"sid": 762732452919851
+						}
+					]
+				},
+				{
+					"functionName": "finishGame",
+					"functionDescription": "",
+					"functionCategory": "general",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
 					"actions": [
 						{
-							"type": "comment",
-							"text": "Mapping"
-						},
-						{
-							"id": "map-function",
-							"objectClass": "Functions",
-							"sid": 333333680971753,
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 122918190842835,
 							"parameters": {
-								"name": "\"movement\"",
-								"string": "\"forward\"",
-								"function": "forward"
+								"seconds": "1.0"
 							}
 						},
 						{
-							"id": "map-function",
-							"objectClass": "Functions",
-							"sid": 222791235982476,
-							"parameters": {
-								"name": "\"movement\"",
-								"string": "\"reverse\"",
-								"function": "reverse"
-							}
+							"id": "destroy",
+							"objectClass": "player",
+							"sid": 769077826967916
 						},
 						{
-							"id": "map-function",
-							"objectClass": "Functions",
-							"sid": 222733094870639,
-							"parameters": {
-								"name": "\"movement\"",
-								"string": "\"right\"",
-								"function": "right"
-							}
-						},
-						{
-							"id": "map-function",
-							"objectClass": "Functions",
-							"sid": 792660116163394,
-							"parameters": {
-								"name": "\"movement\"",
-								"string": "\"left\"",
-								"function": "left"
-							}
+							"id": "destroy",
+							"objectClass": "enemy",
+							"sid": 171680850431313
 						}
 					],
-					"sid": 670949705880470
+					"sid": 727121701159789
 				}
 			],
 			"sid": 655493047000201
@@ -341,7 +388,18 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 430293266750209,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 1\""
+									}
+								}
+							],
 							"sid": 222620503587246,
 							"children": [
 								{
@@ -366,6 +424,24 @@
 											"parameters": {
 												"variable": "forward",
 												"value": "true"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 394695380348538,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 950886693634800,
+											"parameters": {
+												"variable": "rightTurn",
+												"value": "false"
 											}
 										}
 									],
@@ -428,7 +504,18 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 160034202940803,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 2\""
+									}
+								}
+							],
 							"sid": 520275980660962,
 							"children": [
 								{
@@ -511,7 +598,18 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 642969390586570,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 2\""
+									}
+								}
+							],
 							"sid": 874542143201218,
 							"children": [
 								{
@@ -566,7 +664,18 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 762516488121426,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 3\""
+									}
+								}
+							],
 							"sid": 943234064860881,
 							"children": [
 								{
@@ -662,7 +771,18 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 317239573063217,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 4\""
+									}
+								}
+							],
 							"sid": 582111503937496,
 							"children": [
 								{
@@ -749,7 +869,18 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 607062315666558,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 5\""
+									}
+								}
+							],
 							"sid": 150441081368116,
 							"children": [
 								{
@@ -828,21 +959,32 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 177262034309168
+									"sid": 999332729915288
 								},
 								{
-									"id": "is-between-values",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 439133240805211,
+									"sid": 266826021713659,
 									"parameters": {
-										"value": "enemy.Angle",
-										"lower-bound": "1",
-										"upper-bound": "3"
+										"first-value": "enemy.Angle",
+										"comparison": 2,
+										"second-value": "340"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 926721544159227,
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 196074823267527,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 5 | PT 2\""
+									}
+								}
+							],
+							"sid": 495173268311645,
 							"children": [
 								{
 									"eventType": "block",
@@ -850,7 +992,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "enemy",
-											"sid": 946311654578652,
+											"sid": 580636749440822,
 											"parameters": {
 												"instance-variable": "nextAngle",
 												"comparison": 0,
@@ -862,16 +1004,76 @@
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 494067133269970,
+											"sid": 220754712543216,
 											"parameters": {
 												"variable": "leftTurn",
 												"value": "false"
 											}
 										}
 									],
-									"sid": 490159569723469
+									"sid": 466566757052833
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 507887615189801,
+											"parameters": {
+												"instance-variable": "nextAngle",
+												"comparison": 0,
+												"value": "270"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 399177576033823,
+											"parameters": {
+												"variable": "leftTurn",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 834536446115428
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 603379153904738
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 260083964267872,
+									"parameters": {
+										"first-value": "enemy.nextAngle",
+										"comparison": 4,
+										"second-value": "340"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 660345420449826,
+									"disabled": true,
+									"parameters": {
+										"type": "log",
+										"message": "\"curva 5 | PT 3\""
+									}
+								}
+							],
+							"sid": 211696643208953
 						}
 					]
 				}
@@ -1474,6 +1676,119 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "newLap",
+					"functionDescription": "",
+					"functionCategory": "items",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 885005409352455,
+							"parameters": {
+								"variable": "playerLap",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 981709142848375,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 472219192737090,
+									"parameters": {
+										"variable": "playerLap",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "finishGame",
+									"sid": 749669484892264
+								}
+							],
+							"sid": 549719571954191
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 707076597310609
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Lap",
+									"sid": 184770032422316,
+									"parameters": {
+										"text": "\"Lap    \" & playerLap & \"/3\""
+									}
+								}
+							],
+							"sid": 534466539497537
+						}
+					]
+				},
+				{
+					"functionName": "newLapEnemy",
+					"functionDescription": "",
+					"functionCategory": "items",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 548137474984285,
+							"parameters": {
+								"variable": "enemyLap",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 732225893005010,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 957309237778506,
+									"parameters": {
+										"variable": "enemyLap",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "finishGame",
+									"sid": 772082779851809
+								}
+							],
+							"sid": 266543198957945
+						}
+					]
+				},
 				{
 					"functionName": "getItems",
 					"functionDescription": "",

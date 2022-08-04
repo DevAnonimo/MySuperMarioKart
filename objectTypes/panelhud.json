@@ -1,0 +1,49 @@
+{
+	"name": "panelHUD",
+	"plugin-id": "Sprite",
+	"sid": 893307260766473,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 485,
+						"height": 253,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9819778,
+						"collisionPoly": {
+							"points": [
+								0.002074688796680498,
+								0.003968253968253968,
+								0.9979253112033195,
+								0.003968253968253968,
+								0.9979253112033195,
+								0.996031746031746,
+								0.002074688796680498,
+								0.996031746031746
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 301664122711147,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

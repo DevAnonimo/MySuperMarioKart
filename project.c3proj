@@ -24,6 +24,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Camera3D",
 			"name": "3D camera",
 			"author": "Scirra",
@@ -94,7 +102,8 @@
 			"cameraPosition",
 			"Keyboard",
 			"Browser",
-			"Touch"
+			"Touch",
+			"panelHUD"
 		],
 		"subfolders": [
 			{
@@ -116,7 +125,8 @@
 						"items": [
 							"race",
 							"sprint",
-							"AIPath"
+							"AIPath",
+							"finishLine"
 						],
 						"subfolders": [],
 						"name": "Circuit"
@@ -149,6 +159,13 @@
 				],
 				"subfolders": [],
 				"name": "Player"
+			},
+			{
+				"items": [
+					"Lap"
+				],
+				"subfolders": [],
+				"name": "HUD"
 			}
 		]
 	},

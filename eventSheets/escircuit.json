@@ -94,6 +94,30 @@
 			"sid": 969011274894049
 		},
 		{
+			"eventType": "comment",
+			"text": "Circuit"
+		},
+		{
+			"eventType": "variable",
+			"name": "playerLap",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 335077978796659
+		},
+		{
+			"eventType": "variable",
+			"name": "enemyLap",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 400810383143941
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -144,7 +168,6 @@
 					"id": "look-at-position",
 					"objectClass": "3DCamera",
 					"sid": 812012743467080,
-					"disabled": true,
 					"parameters": {
 						"cam-x": "cameraPosition.X",
 						"cam-y": "cameraPosition.Y",
@@ -158,9 +181,19 @@
 					}
 				},
 				{
+					"id": "set-position",
+					"objectClass": "cameraPosition",
+					"sid": 497657079331183,
+					"parameters": {
+						"x": "1270.141846",
+						"y": "670.748671"
+					}
+				},
+				{
 					"id": "look-at-position",
 					"objectClass": "3DCamera",
 					"sid": 717497818724082,
+					"disabled": true,
 					"parameters": {
 						"cam-x": "cameraPosition.X",
 						"cam-y": "cameraPosition.Y",
@@ -171,6 +204,16 @@
 						"up-x": "0",
 						"up-y": "0",
 						"up-z": "1"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "cameraPosition",
+					"sid": 913838545657576,
+					"disabled": true,
+					"parameters": {
+						"x": "1270.141846",
+						"y": "670.748671"
 					}
 				}
 			],
@@ -835,6 +878,50 @@
 							"sid": 967880517339939
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Circuit"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "finishLine",
+							"sid": 352020950068308,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "newLap",
+							"sid": 691624346565530
+						}
+					],
+					"sid": 862390767268982
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "finishLine",
+							"sid": 430773326401070,
+							"parameters": {
+								"object": "enemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "newLapEnemy",
+							"sid": 271799730017518
+						}
+					],
+					"sid": 862670251188229
 				}
 			],
 			"sid": 362959751249819
@@ -946,7 +1033,6 @@
 											"id": "set-acceleration",
 											"objectClass": "enemy",
 											"sid": 374749639876138,
-											"disabled": true,
 											"behaviorType": "Car",
 											"parameters": {
 												"acceleration": "sprint.newAcceleration"
@@ -956,14 +1042,14 @@
 											"id": "set-max-speed",
 											"objectClass": "enemy",
 											"sid": 369251208205865,
-											"disabled": true,
 											"behaviorType": "Car",
 											"parameters": {
 												"max-speed": "sprint.newVelocity"
 											}
 										}
 									],
-									"sid": 195524731868092
+									"sid": 195524731868092,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -979,7 +1065,6 @@
 											"id": "set-acceleration",
 											"objectClass": "enemy",
 											"sid": 136327258419946,
-											"disabled": true,
 											"behaviorType": "Car",
 											"parameters": {
 												"acceleration": "30"
@@ -989,14 +1074,14 @@
 											"id": "set-max-speed",
 											"objectClass": "enemy",
 											"sid": 396059988048636,
-											"disabled": true,
 											"behaviorType": "Car",
 											"parameters": {
 												"max-speed": "150"
 											}
 										}
 									],
-									"sid": 669310050150864
+									"sid": 669310050150864,
+									"disabled": true
 								}
 							]
 						}
@@ -1018,6 +1103,7 @@
 					],
 					"actions": [],
 					"sid": 155352143125234,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -1035,10 +1121,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 117951522366200,
+									"sid": 134282909574868,
 									"parameters": {
 										"object-to-create": "nodeIndicator",
-										"layer": "\"HUD\"",
+										"layer": "\"AI\"",
 										"x": "enemy.Pathfinding.NodeXAt(loopindex)",
 										"y": "enemy.Pathfinding.NodeYAt(loopindex)",
 										"create-hierarchy": false,
