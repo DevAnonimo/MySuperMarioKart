@@ -7,13 +7,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "speed",
+			"name": "baseSpeed",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "150",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 130630894789800
+		},
+		{
+			"eventType": "variable",
+			"name": "baseAcceleration",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 159866234572352
 		},
 		{
 			"eventType": "variable",
@@ -574,6 +584,7 @@
 											"id": "compare-two-values",
 											"objectClass": "System",
 											"sid": 669953833399181,
+											"disabled": true,
 											"parameters": {
 												"first-value": "Touch.AbsoluteY",
 												"comparison": 2,
@@ -668,7 +679,8 @@
 											}
 										}
 									],
-									"sid": 863336207206826
+									"sid": 863336207206826,
+									"disabled": true
 								}
 							]
 						},
@@ -793,6 +805,26 @@
 					]
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 844454157638814,
+							"parameters": {
+								"object": "guiItems"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "useItems",
+							"sid": 509509419145324
+						}
+					],
+					"sid": 480043762699392
+				},
+				{
 					"eventType": "comment",
 					"text": "Enemy"
 				},
@@ -856,7 +888,8 @@
 								},
 								{
 									"callFunction": "getItems",
-									"sid": 226753797193830
+									"sid": 226753797193830,
+									"disabled": true
 								},
 								{
 									"id": "wait",
@@ -1529,12 +1562,13 @@
 					"objectClass": "System",
 					"sid": 390575273915704,
 					"parameters": {
-						"variable": "speed",
+						"variable": "baseSpeed",
 						"value": "player.Car.Speed"
 					}
 				}
 			],
-			"sid": 475059134088938
+			"sid": 475059134088938,
+			"disabled": true
 		}
 	],
 	"sid": 672380237338827

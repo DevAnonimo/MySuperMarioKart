@@ -32,6 +32,23 @@
 										"face": "back",
 										"visible": false
 									}
+								},
+								{
+									"type": "comment",
+									"text": "Itens"
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "guiItems",
+									"sid": 722955023966546
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "guiItems",
+									"sid": 522113375513990,
+									"parameters": {
+										"frame-number": "guiItems.AnimationFrameCount+1"
+									}
 								}
 							],
 							"sid": 933090969960756
@@ -258,6 +275,14 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "playerSprite",
+							"sid": 625864660284927,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
 						{
 							"id": "wait",
 							"objectClass": "System",
@@ -1220,19 +1245,19 @@
 										{
 											"id": "set-acceleration",
 											"objectClass": "player",
-											"sid": 801093966369324,
+											"sid": 877705294905197,
 											"behaviorType": "Car",
 											"parameters": {
-												"acceleration": "30"
+												"acceleration": "baseAcceleration"
 											}
 										},
 										{
 											"id": "set-max-speed",
 											"objectClass": "player",
-											"sid": 988718357060347,
+											"sid": 584015201413554,
 											"behaviorType": "Car",
 											"parameters": {
-												"max-speed": "150"
+												"max-speed": "baseSpeed"
 											}
 										}
 									],
@@ -1677,6 +1702,295 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "getItems",
+					"functionDescription": "",
+					"functionCategory": "items",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "start-animation",
+							"objectClass": "guiItems",
+							"sid": 776772926154201,
+							"parameters": {
+								"from": "current-frame"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 372291892158683,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "guiItems",
+							"sid": 778770100445758,
+							"parameters": {
+								"frame-number": "choose(0,1,2)"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "guiItems",
+							"sid": 831421658347152
+						}
+					],
+					"sid": 379477357817665
+				},
+				{
+					"functionName": "useItems",
+					"functionDescription": "",
+					"functionCategory": "items",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "guiItems",
+							"sid": 672180924230571,
+							"disabled": true,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 401436039867612,
+							"disabled": true,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						}
+					],
+					"sid": 617080765007546,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 622695324843433,
+									"parameters": {
+										"first-value": "guiItems.AnimationFrame",
+										"comparison": 1,
+										"second-value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 906317861482297,
+									"parameters": {
+										"object-to-create": "droppedItem",
+										"layer": "\"items\"",
+										"x": "player.X",
+										"y": "player.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "droppedItem",
+									"sid": 221482421869030,
+									"parameters": {
+										"angle": "player.Angle"
+									}
+								}
+							],
+							"sid": 275530323591860,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 182661970854071,
+											"parameters": {
+												"first-value": "guiItems.AnimationFrame",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-face-object",
+											"objectClass": "droppedItem",
+											"sid": 226726735868098,
+											"parameters": {
+												"face": "left",
+												"object": "banana"
+											}
+										}
+									],
+									"sid": 481495539164192
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 880104163418951
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 440759681734163,
+											"parameters": {
+												"first-value": "guiItems.AnimationFrame",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-face-object",
+											"objectClass": "droppedItem",
+											"sid": 491198940811629,
+											"parameters": {
+												"face": "left",
+												"object": "cascoRed"
+											}
+										}
+									],
+									"sid": 308810853726204
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 995365738530060
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 484660396278355,
+											"parameters": {
+												"first-value": "guiItems.AnimationFrame",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-face-object",
+											"objectClass": "droppedItem",
+											"sid": 840115116948850,
+											"parameters": {
+												"face": "left",
+												"object": "cascoGreen"
+											}
+										}
+									],
+									"sid": 682134413702855
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 905541564378499
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 507598812153829,
+											"parameters": {
+												"first-value": "guiItems.AnimationFrame",
+												"comparison": 0,
+												"second-value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 228843643510235,
+											"parameters": {
+												"variable": "baseSpeed",
+												"value": "250"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 582671032625125,
+											"parameters": {
+												"variable": "baseAcceleration",
+												"value": "250"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 660988584281799,
+											"parameters": {
+												"seconds": "3"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 319363728496985,
+											"parameters": {
+												"variable": "baseSpeed",
+												"value": "150"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 880056542229895,
+											"parameters": {
+												"variable": "baseAcceleration",
+												"value": "30"
+											}
+										}
+									],
+									"sid": 847646036582286
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "guiItems",
+											"sid": 151961858135313,
+											"parameters": {
+												"frame-number": "guiItems.AnimationFrameCount+1"
+											}
+										}
+									],
+									"sid": 221442486115068
+								}
+							]
+						}
+					]
+				},
+				{
 					"functionName": "newLap",
 					"functionDescription": "",
 					"functionCategory": "items",
@@ -1733,9 +2047,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "Lap",
-									"sid": 184770032422316,
+									"sid": 187930158721752,
 									"parameters": {
-										"text": "\"Lap    \" & playerLap & \"/3\""
+										"text": "\"Lap   \" & playerLap & \"/3\""
 									}
 								}
 							],
@@ -1788,18 +2102,6 @@
 							"sid": 266543198957945
 						}
 					]
-				},
-				{
-					"functionName": "getItems",
-					"functionDescription": "",
-					"functionCategory": "items",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 948917672166417
 				}
 			],
 			"sid": 200181369751818

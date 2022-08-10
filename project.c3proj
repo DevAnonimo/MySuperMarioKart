@@ -102,8 +102,7 @@
 			"cameraPosition",
 			"Keyboard",
 			"Browser",
-			"Touch",
-			"panelHUD"
+			"Touch"
 		],
 		"subfolders": [
 			{
@@ -134,7 +133,12 @@
 					{
 						"items": [
 							"coins",
-							"powerItems"
+							"powerItems",
+							"banana",
+							"droppedItem",
+							"guiItems",
+							"cascoGreen",
+							"cascoRed"
 						],
 						"subfolders": [],
 						"name": "Items"
@@ -162,7 +166,8 @@
 			},
 			{
 				"items": [
-					"Lap"
+					"Lap",
+					"panelHUD"
 				],
 				"subfolders": [],
 				"name": "HUD"
