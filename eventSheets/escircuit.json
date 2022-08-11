@@ -747,6 +747,48 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
+							"objectClass": "droppedItem",
+							"sid": 112081139233153,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 115502003471466,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "droppedItem",
+									"sid": 680860231036351,
+									"parameters": {
+										"instance-variable": "Ativo"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "itemEffect",
+									"sid": 151261695050428
+								},
+								{
+									"id": "destroy",
+									"objectClass": "droppedItem",
+									"sid": 495824668053781
+								}
+							],
+							"sid": 545901556158257
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
 							"objectClass": "powerItems",
 							"sid": 899842645374628,
 							"parameters": {

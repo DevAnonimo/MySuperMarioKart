@@ -4242,6 +4242,48 @@
 						"angle": 0,
 						"zElevation": 0.01
 					}
+				},
+				{
+					"type": "droppedItem",
+					"properties": {
+						"shape": "box",
+						"z-height": 0.5,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": false,
+						"face-left": true,
+						"face-right": false,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 136,
+					"instanceVariables": {
+						"Ativo": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1287.6626015119757,
+						"y": 593.5271172476264,
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0.01
+					}
 				}
 			],
 			"sid": 247515668261610,
@@ -4614,48 +4656,7 @@
 					"global": false
 				}
 			],
-			"instances": [
-				{
-					"type": "droppedItem",
-					"properties": {
-						"shape": "box",
-						"z-height": 0.5,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": false,
-						"face-left": true,
-						"face-right": false,
-						"face-top": false,
-						"face-bottom": false,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 136,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1287.6626015119757,
-						"y": 593.5271172476264,
-						"width": 8,
-						"height": 8,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0.01
-					}
-				}
-			],
+			"instances": [],
 			"sid": 365542295027712,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

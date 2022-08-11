@@ -3,7 +3,14 @@
 	"plugin-id": "Shape3D",
 	"sid": 709763044410234,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Ativo",
+			"type": "boolean",
+			"desc": "",
+			"sid": 260546476990030
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
