@@ -1792,10 +1792,10 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "guiItems",
-									"sid": 396863213261335,
+									"sid": 488662247722766,
 									"disabled": true,
 									"parameters": {
-										"frame-number": "1"
+										"frame-number": "2"
 									}
 								},
 								{
@@ -1953,6 +1953,24 @@
 													"parameters": {
 														"face": "left",
 														"object": "cascoGreen"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "droppedItem",
+													"sid": 210036903720139,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "droppedItem",
+													"sid": 872146782999978,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "player.Angle"
 													}
 												}
 											],

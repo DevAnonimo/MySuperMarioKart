@@ -4664,6 +4664,17 @@
 								"stop-on-solids": false,
 								"enabled": false
 							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": true,
+								"step": false,
+								"enabled": false
+							}
 						}
 					},
 					"world": {

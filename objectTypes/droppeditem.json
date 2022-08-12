@@ -21,6 +21,11 @@
 			"behaviorId": "MoveTo",
 			"name": "MoveTo",
 			"sid": 510792215868515
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 225670069475314
 		}
 	],
 	"effectTypes": [],
