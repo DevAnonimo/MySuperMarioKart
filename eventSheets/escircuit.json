@@ -152,7 +152,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 729244319230945,
+					"sid": 682646551059064,
 					"parameters": {
 						"seconds": "2"
 					}
@@ -456,6 +456,30 @@
 									]
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Use item"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 371569617460663,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "useItems",
+									"sid": 287440844931047
+								}
+							],
+							"sid": 229566513778296
 						}
 					],
 					"sid": 431218747862280
@@ -581,15 +605,13 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 669953833399181,
-											"disabled": true,
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 971430255266562,
 											"parameters": {
-												"first-value": "Touch.AbsoluteY",
-												"comparison": 2,
-												"second-value": "250"
-											}
+												"object": "guiItems"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [],
