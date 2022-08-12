@@ -118,7 +118,8 @@
 			"cameraPosition",
 			"Keyboard",
 			"Browser",
-			"Touch"
+			"Touch",
+			"redCascoFollow"
 		],
 		"subfolders": [
 			{
@@ -141,7 +142,8 @@
 							"race",
 							"sprint",
 							"AIPath",
-							"finishLine"
+							"finishLine",
+							"roughtTerrain"
 						],
 						"subfolders": [],
 						"name": "Circuit"
@@ -166,8 +168,7 @@
 				"items": [
 					"enemySprite",
 					"enemy",
-					"nodeIndicator",
-					"roughtTerrain"
+					"nodeIndicator"
 				],
 				"subfolders": [],
 				"name": "Enemy"

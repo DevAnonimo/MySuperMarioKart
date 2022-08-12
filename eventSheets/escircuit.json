@@ -1004,7 +1004,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "itemEffect",
+									"callFunction": "itemEffectPlayer",
 									"sid": 751799473446553
 								},
 								{
@@ -1016,6 +1016,31 @@
 							"sid": 449522402951748
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "droppedItem",
+							"sid": 472337055984686,
+							"parameters": {
+								"object": "enemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "itemEffectEnemy",
+							"sid": 145239090517602
+						},
+						{
+							"id": "destroy",
+							"objectClass": "droppedItem",
+							"sid": 316003653918558
+						}
+					],
+					"sid": 569118008203353
 				},
 				{
 					"eventType": "block",
@@ -1043,10 +1068,10 @@
 								{
 									"id": "move-to-object",
 									"objectClass": "droppedItem",
-									"sid": 992638024951766,
+									"sid": 848458551864126,
 									"behaviorType": "MoveTo",
 									"parameters": {
-										"object": "enemy",
+										"object": "redCascoFollow",
 										"image-point": "0",
 										"mode": "direct"
 									}

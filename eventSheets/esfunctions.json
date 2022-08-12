@@ -352,6 +352,21 @@
 										"variable": "forward",
 										"value": "true"
 									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "redCascoFollow",
+									"sid": 383831390408349,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "enemy",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
 								}
 							],
 							"sid": 941202343982141
@@ -1698,10 +1713,162 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Casco powers",
+					"title": "Item powers",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"functionName": "itemEffectPlayer",
+							"functionDescription": "",
+							"functionCategory": "items",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 893283733097620,
+									"parameters": {
+										"animation": "\"Girando\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 856629339405786,
+									"parameters": {
+										"variable": "baseSpeed",
+										"value": "63"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 769063188726799,
+									"parameters": {
+										"variable": "baseAcceleration",
+										"value": "20"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 819643462262435,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 331062711641040,
+									"parameters": {
+										"variable": "baseSpeed",
+										"value": "150"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 356291572960820,
+									"parameters": {
+										"variable": "baseAcceleration",
+										"value": "30"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 703275187949705,
+									"parameters": {
+										"animation": "\"Correndo\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 976284040049871
+						},
+						{
+							"functionName": "itemEffectEnemy",
+							"functionDescription": "",
+							"functionCategory": "items",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 804856042643570,
+									"disabled": true,
+									"parameters": {
+										"animation": "\"Girando\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "enemy",
+									"sid": 420362488621219,
+									"behaviorType": "Car",
+									"parameters": {
+										"speed": "63"
+									}
+								},
+								{
+									"id": "set-acceleration",
+									"objectClass": "enemy",
+									"sid": 312942264348196,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "20"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 632792594718018,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "enemy",
+									"sid": 747571757824660,
+									"behaviorType": "Car",
+									"parameters": {
+										"speed": "150"
+									}
+								},
+								{
+									"id": "set-acceleration",
+									"objectClass": "enemy",
+									"sid": 371380141088644,
+									"behaviorType": "Car",
+									"parameters": {
+										"acceleration": "30"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Mario",
+									"sid": 973947485494406,
+									"disabled": true,
+									"parameters": {
+										"animation": "\"Correndo\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 211921693287846
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1792,10 +1959,10 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "guiItems",
-									"sid": 488662247722766,
+									"sid": 903085057509929,
 									"disabled": true,
 									"parameters": {
-										"frame-number": "2"
+										"frame-number": "1"
 									}
 								},
 								{
@@ -1983,9 +2150,18 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 626272589554299,
+													"sid": 580924517138094,
 													"parameters": {
-														"seconds": "0.8"
+														"seconds": "0.5"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "droppedItem",
+													"sid": 430670563652146,
+													"parameters": {
+														"instance-variable": "Ativo",
+														"value": "true"
 													}
 												},
 												{
@@ -1996,15 +2172,6 @@
 													"parameters": {
 														"x": "enemy.X",
 														"y": "enemy.Y"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "droppedItem",
-													"sid": 659794087346299,
-													"parameters": {
-														"instance-variable": "Ativo",
-														"value": "true"
 													}
 												}
 											],
@@ -2051,11 +2218,29 @@
 											}
 										},
 										{
+											"id": "set-steer-speed",
+											"objectClass": "player",
+											"sid": 597423181596928,
+											"behaviorType": "Car",
+											"parameters": {
+												"steer-speed": "180"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 858443189512538,
 											"parameters": {
 												"seconds": "2.5"
+											}
+										},
+										{
+											"id": "set-steer-speed",
+											"objectClass": "player",
+											"sid": 403211563029346,
+											"behaviorType": "Car",
+											"parameters": {
+												"steer-speed": "80"
 											}
 										},
 										{
@@ -2098,81 +2283,6 @@
 						}
 					],
 					"sid": 973881647583924
-				},
-				{
-					"functionName": "itemEffect",
-					"functionDescription": "",
-					"functionCategory": "items",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Mario",
-							"sid": 107245235572316,
-							"parameters": {
-								"animation": "\"Girando\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 901083147092861,
-							"parameters": {
-								"variable": "baseSpeed",
-								"value": "63"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 987945259678269,
-							"parameters": {
-								"variable": "baseAcceleration",
-								"value": "20"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 337422145581106,
-							"parameters": {
-								"seconds": "3"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 270771038622439,
-							"parameters": {
-								"variable": "baseSpeed",
-								"value": "150"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 109521327803179,
-							"parameters": {
-								"variable": "baseAcceleration",
-								"value": "30"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Mario",
-							"sid": 813946503543547,
-							"parameters": {
-								"animation": "\"Correndo\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 255523679035806
 				},
 				{
 					"functionName": "newLap",
