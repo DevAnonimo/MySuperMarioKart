@@ -64,6 +64,22 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -74,14 +90,6 @@
 			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
-			"author": "Scirra",
-			"version": "r302",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Pathfinding",
-			"name": "Pathfinding",
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false

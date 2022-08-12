@@ -747,48 +747,6 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "droppedItem",
-							"sid": 112081139233153,
-							"parameters": {
-								"object": "player"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 115502003471466,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "droppedItem",
-									"sid": 680860231036351,
-									"parameters": {
-										"instance-variable": "Ativo"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "itemEffect",
-									"sid": 151261695050428
-								},
-								{
-									"id": "destroy",
-									"objectClass": "droppedItem",
-									"sid": 495824668053781
-								}
-							],
-							"sid": 545901556158257
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
 							"objectClass": "powerItems",
 							"sid": 899842645374628,
 							"parameters": {
@@ -997,6 +955,106 @@
 						}
 					],
 					"sid": 862670251188229
+				},
+				{
+					"eventType": "comment",
+					"text": "Items"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "AIPath",
+							"sid": 624123825879640,
+							"parameters": {
+								"object": "droppedItem"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 869039295127468
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "droppedItem",
+							"sid": 243332516227908,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 353124488739984,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "droppedItem",
+									"sid": 891843690424678,
+									"parameters": {
+										"instance-variable": "Ativo"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "itemEffect",
+									"sid": 751799473446553
+								},
+								{
+									"id": "destroy",
+									"objectClass": "droppedItem",
+									"sid": 810251235180119
+								}
+							],
+							"sid": 449522402951748
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 298820493172762
+						}
+					],
+					"actions": [],
+					"sid": 190191670595714,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-enabled",
+									"objectClass": "droppedItem",
+									"sid": 617285836198461,
+									"behaviorType": "MoveTo"
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-object",
+									"objectClass": "droppedItem",
+									"sid": 992638024951766,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"object": "enemy",
+										"image-point": "0",
+										"mode": "direct"
+									}
+								}
+							],
+							"sid": 176330536768719
+						}
+					]
 				}
 			],
 			"sid": 362959751249819

@@ -4051,8 +4051,8 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 1287.662912413287,
-								"y": 593.776213617132,
+								"x": 1288.3665708839956,
+								"y": 593.7761385585447,
 								"width": 15,
 								"height": 14,
 								"originX": 0.5,
@@ -4240,48 +4240,6 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0.01
-					}
-				},
-				{
-					"type": "droppedItem",
-					"properties": {
-						"shape": "box",
-						"z-height": 0.5,
-						"initially-visible": true,
-						"face-back": false,
-						"face-front": false,
-						"face-left": true,
-						"face-right": false,
-						"face-top": false,
-						"face-bottom": false,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 136,
-					"instanceVariables": {
-						"Ativo": false
-					},
-					"behaviors": {},
-					"world": {
-						"x": 1287.6626015119757,
-						"y": 593.5271172476264,
-						"width": 8,
-						"height": 8,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
 						"zElevation": 0.01
 					}
 				}
@@ -4656,7 +4614,76 @@
 					"global": false
 				}
 			],
-			"instances": [],
+			"instances": [
+				{
+					"type": "droppedItem",
+					"properties": {
+						"shape": "box",
+						"z-height": 0.5,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": false,
+						"face-left": true,
+						"face-right": false,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 139,
+					"instanceVariables": {
+						"Ativo": false
+					},
+					"behaviors": {
+						"Pathfinding": {
+							"properties": {
+								"cell-size": 12,
+								"cell-border": -1,
+								"obstacles": "custom",
+								"max-speed": 1000,
+								"acceleration": 1000,
+								"deceleration": 5000,
+								"rotate-speed": 135,
+								"rotate-object": true,
+								"diagonals": true,
+								"enabled": false
+							}
+						},
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": false
+							}
+						}
+					},
+					"world": {
+						"x": 1289.9876278705801,
+						"y": 565.6581268634586,
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0.01
+					}
+				}
+			],
 			"sid": 365542295027712,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

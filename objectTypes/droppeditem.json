@@ -11,7 +11,18 @@
 			"sid": 260546476990030
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 177791601993426
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 510792215868515
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -49,7 +60,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8228963,
+						"imageSpriteId": 4924809,
 						"collisionPoly": {
 							"points": [
 								0.248046875,

@@ -25,6 +25,11 @@
 							"conditions": [],
 							"actions": [
 								{
+									"id": "destroy",
+									"objectClass": "droppedItem",
+									"sid": 956991024488280
+								},
+								{
 									"id": "set-face-visible",
 									"objectClass": "playerSprite",
 									"sid": 766532735438728,
@@ -332,41 +337,11 @@
 							"actions": [
 								{
 									"id": "add-obstacle",
-									"objectClass": "enemy",
-									"sid": 684814257601721,
+									"objectClass": "droppedItem",
+									"sid": 135634033381644,
 									"behaviorType": "Pathfinding",
 									"parameters": {
-										"obstacle": "mapColliders"
-									}
-								},
-								{
-									"id": "add-path-cost",
-									"objectClass": "enemy",
-									"sid": 212107469906175,
-									"disabled": true,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"object": "roughtTerrain",
-										"cost": "54"
-									}
-								},
-								{
-									"id": "add-obstacle",
-									"objectClass": "enemy",
-									"sid": 885747070755669,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"obstacle": "player"
-									}
-								},
-								{
-									"id": "find-path",
-									"objectClass": "enemy",
-									"sid": 432221524918024,
-									"behaviorType": "Pathfinding",
-									"parameters": {
-										"x": "Self.nextX",
-										"y": "Self.nextY"
+										"obstacle": "roughtTerrain"
 									}
 								},
 								{
@@ -1723,6 +1698,41 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "Casco powers",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-path-found",
+									"objectClass": "droppedItem",
+									"sid": 594092300653803,
+									"behaviorType": "Pathfinding"
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-object",
+									"objectClass": "droppedItem",
+									"sid": 913792071804485,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"object": "enemy",
+										"image-point": "0",
+										"mode": "direct"
+									}
+								}
+							],
+							"sid": 770015980109157
+						}
+					],
+					"sid": 493176562356468
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "Create Item",
 					"description": "",
 					"isActiveOnStart": true,
@@ -1782,10 +1792,10 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "guiItems",
-									"sid": 556738286698932,
+									"sid": 396863213261335,
 									"disabled": true,
 									"parameters": {
-										"frame-number": "3"
+										"frame-number": "1"
 									}
 								},
 								{
@@ -1894,6 +1904,24 @@
 														"face": "left",
 														"object": "cascoRed"
 													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "droppedItem",
+													"sid": 994988489082917,
+													"behaviorType": "Pathfinding",
+													"parameters": {
+														"set": "enabled"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "droppedItem",
+													"sid": 123782279992317,
+													"behaviorType": "MoveTo",
+													"parameters": {
+														"enabled": true
+													}
 												}
 											],
 											"sid": 587952554765626
@@ -1940,6 +1968,16 @@
 													"sid": 626272589554299,
 													"parameters": {
 														"seconds": "0.8"
+													}
+												},
+												{
+													"id": "find-path",
+													"objectClass": "droppedItem",
+													"sid": 425165647197113,
+													"behaviorType": "Pathfinding",
+													"parameters": {
+														"x": "enemy.X",
+														"y": "enemy.Y"
 													}
 												},
 												{
