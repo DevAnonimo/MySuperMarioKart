@@ -230,7 +230,48 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "btn_sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 839989409905683,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "coin_pickup.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 827787561165396,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "using_item.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 111909389982001,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "losing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 823845450993210,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "winning.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 856602002565061,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

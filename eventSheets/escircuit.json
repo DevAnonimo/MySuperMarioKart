@@ -767,6 +767,17 @@
 							"id": "destroy",
 							"objectClass": "coins",
 							"sid": 882654218322048
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 490434525481162,
+							"parameters": {
+								"audio-file": "coin_pickup",
+								"loop": "not-looping",
+								"volume": "-5",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 365714333052515
@@ -832,26 +843,6 @@
 							"sid": 292580865410964
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 844454157638814,
-							"parameters": {
-								"object": "guiItems"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "useItems",
-							"sid": 509509419145324
-						}
-					],
-					"sid": 480043762699392
 				},
 				{
 					"eventType": "comment",
@@ -988,6 +979,26 @@
 				{
 					"eventType": "comment",
 					"text": "Items"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 604747398703708,
+							"parameters": {
+								"object": "guiItems"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "useItems",
+							"sid": 273102531419899
+						}
+					],
+					"sid": 929311868146628
 				},
 				{
 					"eventType": "block",
