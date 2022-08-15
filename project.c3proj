@@ -63,6 +63,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Pathfinding",
 			"name": "Pathfinding",
@@ -119,7 +127,8 @@
 			"Keyboard",
 			"Browser",
 			"Touch",
-			"redCascoFollow"
+			"redCascoFollow",
+			"Audio"
 		],
 		"subfolders": [
 			{
@@ -184,7 +193,10 @@
 			{
 				"items": [
 					"Lap",
-					"panelHUD"
+					"panelHUD",
+					"menuPanel",
+					"btn_Menu",
+					"menuText"
 				],
 				"subfolders": [],
 				"name": "HUD"
@@ -222,7 +234,16 @@
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "racingMusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 462213354693963,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

@@ -27,13 +27,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "iidNextObject",
-			"type": "number",
-			"initialValue": "1",
+			"name": "isGameFinished",
+			"type": "boolean",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 901815877983941
+			"sid": 270473436447443
 		},
 		{
 			"eventType": "comment",
@@ -104,6 +104,16 @@
 			"sid": 969011274894049
 		},
 		{
+			"eventType": "variable",
+			"name": "iidNextObject",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 976921841893191
+		},
+		{
 			"eventType": "comment",
 			"text": "Circuit"
 		},
@@ -139,27 +149,24 @@
 			"actions": [
 				{
 					"callFunction": "pins",
-					"sid": 492901620457917
+					"sid": 871842136725693
 				},
 				{
-					"callFunction": "mapping",
-					"sid": 880930684762371
-				},
-				{
-					"callFunction": "prepareGamePlayer",
-					"sid": 298718068057908
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 682646551059064,
+					"id": "set-text",
+					"objectClass": "menuText",
+					"sid": 804897014055806,
 					"parameters": {
-						"seconds": "2"
+						"text": "\"New game?\""
 					}
 				},
 				{
-					"callFunction": "prepareAI",
-					"sid": 712992378788208
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 240727954077140,
+					"parameters": {
+						"layer": "\"Menu\"",
+						"visibility": "visible"
+					}
 				}
 			],
 			"sid": 155928672402841
@@ -1716,6 +1723,111 @@
 			],
 			"sid": 475059134088938,
 			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 948703249806987,
+					"parameters": {
+						"object": "btn_Menu"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 860339321684143,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 212631153835182,
+							"parameters": {
+								"layer": "\"Menu\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 436247036209957,
+							"parameters": {
+								"layer": "\"Menu\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 816842530873254,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 729192941122493,
+									"parameters": {
+										"variable": "isGameFinished"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 828960202711203,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 614407064075384
+								},
+								{
+									"id": "reset-persisted-objects",
+									"objectClass": "System",
+									"sid": 118545426271402
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 338119698147134
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 209966656922682
+								}
+							],
+							"sid": 824370108720936
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 789750843729182
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "StartGame",
+									"sid": 582555485509514
+								}
+							],
+							"sid": 766605898182420
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 672380237338827
