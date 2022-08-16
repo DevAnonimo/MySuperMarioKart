@@ -2151,6 +2151,15 @@
 									}
 								},
 								{
+									"id": "set-animation",
+									"objectClass": "Bowser",
+									"sid": 749172948916712,
+									"parameters": {
+										"animation": "\"Girando\"",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "set-speed",
 									"objectClass": "enemy",
 									"sid": 420362488621219,
