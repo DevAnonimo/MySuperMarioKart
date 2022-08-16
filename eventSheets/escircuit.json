@@ -1686,7 +1686,35 @@
 									}
 								}
 							],
-							"sid": 751649095190560
+							"sid": 751649095190560,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Bowser",
+											"sid": 387878174391920,
+											"parameters": {
+												"animation": "\"Girando\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Bowser",
+											"sid": 265509222618804,
+											"parameters": {
+												"animation": "\"e-forte\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 755074877747665
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -1725,7 +1753,66 @@
 									}
 								}
 							],
-							"sid": 460587071261000
+							"sid": 460587071261000,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Bowser",
+											"sid": 835797539628621,
+											"parameters": {
+												"animation": "\"Girando\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Bowser",
+											"sid": 214611381334740,
+											"parameters": {
+												"animation": "\"d-forte\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 600545241568875
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 587932178486514
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Bowser",
+									"sid": 965372187252308,
+									"parameters": {
+										"animation": "\"Girando\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Bowser",
+									"sid": 205283933440379,
+									"parameters": {
+										"animation": "\"Correndo\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 710845600865145
 						}
 					]
 				}
