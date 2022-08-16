@@ -841,6 +841,30 @@
 								}
 							],
 							"sid": 292580865410964
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 983645128377758
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 152149332009984,
+									"parameters": {
+										"audio-file": "access denied",
+										"loop": "not-looping",
+										"volume": "-5",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 195032165213419
 						}
 					]
 				},

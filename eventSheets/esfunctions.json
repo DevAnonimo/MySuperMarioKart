@@ -2055,6 +2055,17 @@
 							"conditions": [],
 							"actions": [
 								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 721677320325688,
+									"parameters": {
+										"audio-file": "hitByItem",
+										"loop": "not-looping",
+										"volume": "20",
+										"tag-optional": "\"\""
+									}
+								},
+								{
 									"id": "set-animation",
 									"objectClass": "Mario",
 									"sid": 893283733097620,
@@ -2234,6 +2245,17 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 626205608299139,
+							"parameters": {
+								"audio-file": "box item",
+								"loop": "not-looping",
+								"volume": "-6",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "start-animation",
 							"objectClass": "guiItems",
