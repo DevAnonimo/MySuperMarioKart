@@ -600,6 +600,7 @@
 									"id": "log",
 									"objectClass": "Browser",
 									"sid": 369351277798074,
+									"disabled": true,
 									"parameters": {
 										"type": "log",
 										"message": "\"X: \" & Touch.AbsoluteX & \" Y: \" & Touch.AbsoluteY"

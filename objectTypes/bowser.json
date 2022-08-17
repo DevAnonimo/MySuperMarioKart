@@ -1037,7 +1037,7 @@
 									]
 								},
 								"useCollisionPoly": true,
-								"duration": 1
+								"duration": 2
 							},
 							{
 								"width": 29,
@@ -1385,7 +1385,7 @@
 									]
 								},
 								"useCollisionPoly": true,
-								"duration": 1
+								"duration": 2
 							},
 							{
 								"width": 29,

@@ -255,6 +255,7 @@
 									"id": "request-fullscreen",
 									"objectClass": "Browser",
 									"sid": 216886839044858,
+									"disabled": true,
 									"parameters": {
 										"mode": "centered",
 										"navigation-ui": "auto"
@@ -264,6 +265,7 @@
 									"id": "lock-orientation",
 									"objectClass": "Browser",
 									"sid": 538016020323224,
+									"disabled": true,
 									"parameters": {
 										"orientation": "landscape"
 									}
@@ -1480,9 +1482,53 @@
 									"parameters": {
 										"speed": "30"
 									}
+								},
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 375657867807635,
+									"parameters": {
+										"tag": "\"badTerrain\"",
+										"playback-rate": "2"
+									}
+								},
+								{
+									"id": "add-gain-effect",
+									"objectClass": "Audio",
+									"sid": 921285217763068,
+									"parameters": {
+										"tag": "\"badTerrain\"",
+										"gain": "10"
+									}
 								}
 							],
-							"sid": 668440166995662
+							"sid": 668440166995662,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 371935579453557
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 211429690824362,
+											"parameters": {
+												"audio-file": "badTerrain",
+												"loop": "looping",
+												"volume": "0",
+												"tag-optional": "\"badTerrain\""
+											}
+										}
+									],
+									"sid": 150890589776676
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -1493,7 +1539,16 @@
 									"sid": 976966296347043
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 963957959898586,
+									"parameters": {
+										"tag": "\"badTerrain\""
+									}
+								}
+							],
 							"sid": 504897861554659,
 							"children": [
 								{
@@ -2142,16 +2197,6 @@
 							"actions": [
 								{
 									"id": "set-animation",
-									"objectClass": "Mario",
-									"sid": 804856042643570,
-									"disabled": true,
-									"parameters": {
-										"animation": "\"Girando\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
 									"objectClass": "Bowser",
 									"sid": 749172948916712,
 									"parameters": {
@@ -2205,9 +2250,8 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Mario",
-									"sid": 973947485494406,
-									"disabled": true,
+									"objectClass": "Bowser",
+									"sid": 770233436103792,
 									"parameters": {
 										"animation": "\"Correndo\"",
 										"from": "beginning"
