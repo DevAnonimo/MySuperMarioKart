@@ -9,135 +9,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Laps Controll",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"functionName": "newLap",
-							"functionDescription": "",
-							"functionCategory": "general",
-							"functionReturnType": "none",
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 736159676164012,
-									"parameters": {
-										"variable": "playerLap",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 770881492731763,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 539342834048394,
-											"parameters": {
-												"variable": "playerLap",
-												"comparison": 0,
-												"value": "4"
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "finishGame",
-											"sid": 527021434161617,
-											"parameters": [
-												"\"Player\""
-											]
-										}
-									],
-									"sid": 574509049821487
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 608143995320848
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "Lap",
-											"sid": 403720167001003,
-											"parameters": {
-												"text": "\"Lap   \" & playerLap & \"/3\""
-											}
-										}
-									],
-									"sid": 167651811011682
-								}
-							]
-						},
-						{
-							"functionName": "newLapEnemy",
-							"functionDescription": "",
-							"functionCategory": "general",
-							"functionReturnType": "none",
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 921248867007614,
-									"parameters": {
-										"variable": "enemyLap",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 362353405606622,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 216206843421070,
-											"parameters": {
-												"variable": "enemyLap",
-												"comparison": 0,
-												"value": "4"
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "finishGame",
-											"sid": 111566607536261,
-											"parameters": [
-												"\"Enemy\""
-											]
-										}
-									],
-									"sid": 927256072397135
-								}
-							]
-						}
-					],
-					"sid": 683314011585995
-				},
-				{
 					"functionName": "prepareGamePlayer",
 					"functionDescription": "",
 					"functionCategory": "general",
@@ -147,7 +18,7 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 621253922880962,
+					"sid": 905717159430973,
 					"children": [
 						{
 							"eventType": "block",
@@ -156,12 +27,12 @@
 								{
 									"id": "destroy",
 									"objectClass": "droppedItem",
-									"sid": 956991024488280
+									"sid": 675105633198422
 								},
 								{
 									"id": "set-face-visible",
 									"objectClass": "playerSprite",
-									"sid": 766532735438728,
+									"sid": 815961851435585,
 									"parameters": {
 										"face": "back",
 										"visible": false
@@ -174,12 +45,12 @@
 								{
 									"id": "stop-animation",
 									"objectClass": "guiItems",
-									"sid": 722955023966546
+									"sid": 168338154420421
 								},
 								{
 									"id": "set-animation-frame",
 									"objectClass": "guiItems",
-									"sid": 522113375513990,
+									"sid": 669535598057171,
 									"parameters": {
 										"frame-number": "guiItems.AnimationFrameCount+1"
 									}
@@ -187,13 +58,13 @@
 								{
 									"id": "set-visible",
 									"objectClass": "guiItems",
-									"sid": 221900822139338,
+									"sid": 621006184741096,
 									"parameters": {
 										"visibility": "visible"
 									}
 								}
 							],
-							"sid": 933090969960756
+							"sid": 260716168221088
 						},
 						{
 							"eventType": "block",
@@ -201,7 +72,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 250574331115699,
+									"sid": 197213702551164,
 									"parameters": {
 										"first-value": "left(Browser.Platform, 1)",
 										"comparison": 0,
@@ -211,7 +82,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 192430585171094,
+									"sid": 880955806630771,
 									"parameters": {
 										"first-value": "left(Browser.Platform, 1)",
 										"comparison": 0,
@@ -223,14 +94,14 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 469038319545876,
+									"sid": 496514380489887,
 									"parameters": {
 										"group-name": "\"PC\"",
 										"state": "activated"
 									}
 								}
 							],
-							"sid": 856744434231154,
+							"sid": 346831624209822,
 							"isOrBlock": true
 						},
 						{
@@ -239,14 +110,14 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 914685828933047
+									"sid": 301096140776008
 								}
 							],
 							"actions": [
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 276601791845325,
+									"sid": 161780824448002,
 									"parameters": {
 										"seconds": "1.0"
 									}
@@ -254,7 +125,7 @@
 								{
 									"id": "request-fullscreen",
 									"objectClass": "Browser",
-									"sid": 216886839044858,
+									"sid": 900072758987146,
 									"disabled": true,
 									"parameters": {
 										"mode": "centered",
@@ -264,7 +135,7 @@
 								{
 									"id": "lock-orientation",
 									"objectClass": "Browser",
-									"sid": 538016020323224,
+									"sid": 292855136375970,
 									"disabled": true,
 									"parameters": {
 										"orientation": "landscape"
@@ -273,7 +144,7 @@
 								{
 									"id": "vibrate",
 									"objectClass": "Browser",
-									"sid": 337827253099042,
+									"sid": 329159122983206,
 									"parameters": {
 										"pattern": "\"200,100,200\""
 									}
@@ -281,14 +152,14 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 803809373420211,
+									"sid": 870878854718672,
 									"parameters": {
 										"group-name": "\"Mobile\"",
 										"state": "activated"
 									}
 								}
 							],
-							"sid": 226798974663433
+							"sid": 609359944639981
 						}
 					]
 				},
@@ -302,7 +173,7 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 653110286917616,
+					"sid": 816203637096940,
 					"children": [
 						{
 							"eventType": "block",
@@ -311,7 +182,7 @@
 								{
 									"id": "pin-to-object-properties",
 									"objectClass": "cameraPosition",
-									"sid": 545316929868455,
+									"sid": 270436055416605,
 									"behaviorType": "Pin",
 									"parameters": {
 										"pin-to": "player",
@@ -326,7 +197,7 @@
 								{
 									"id": "pin-to-object-properties",
 									"objectClass": "cameraPosition",
-									"sid": 697736709377045,
+									"sid": 458065339169319,
 									"disabled": true,
 									"behaviorType": "Pin",
 									"parameters": {
@@ -340,7 +211,7 @@
 									}
 								}
 							],
-							"sid": 624185451124261
+							"sid": 919400027257750
 						}
 					]
 				},
@@ -354,7 +225,7 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 670949705880470,
+					"sid": 614417350048107,
 					"children": [
 						{
 							"eventType": "block",
@@ -367,7 +238,7 @@
 								{
 									"id": "map-function",
 									"objectClass": "Functions",
-									"sid": 345992370915341,
+									"sid": 946508877887769,
 									"parameters": {
 										"name": "\"movement\"",
 										"string": "\"forward\"",
@@ -377,7 +248,7 @@
 								{
 									"id": "map-function",
 									"objectClass": "Functions",
-									"sid": 844600297777254,
+									"sid": 151670902792410,
 									"parameters": {
 										"name": "\"movement\"",
 										"string": "\"reverse\"",
@@ -387,7 +258,7 @@
 								{
 									"id": "map-function",
 									"objectClass": "Functions",
-									"sid": 126534850338986,
+									"sid": 353078533302652,
 									"parameters": {
 										"name": "\"movement\"",
 										"string": "\"right\"",
@@ -397,7 +268,7 @@
 								{
 									"id": "map-function",
 									"objectClass": "Functions",
-									"sid": 538809841612395,
+									"sid": 794185697742632,
 									"parameters": {
 										"name": "\"movement\"",
 										"string": "\"left\"",
@@ -405,7 +276,7 @@
 									}
 								}
 							],
-							"sid": 762732452919851
+							"sid": 889647798397570
 						}
 					]
 				},
@@ -430,7 +301,7 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 667964863819688,
+							"sid": 134510258195006,
 							"parameters": {
 								"variable": "isGameFinished",
 								"value": "true"
@@ -439,16 +310,7 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 424447237602083,
-							"parameters": {
-								"layer": "\"Menu\"",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 373980260995446,
+							"sid": 756471751868900,
 							"parameters": {
 								"layer": "\"Racing\"",
 								"visibility": "invisible"
@@ -457,7 +319,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "playerSprite",
-							"sid": 625864660284927,
+							"sid": 230747413638477,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -465,7 +327,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 122918190842835,
+							"sid": 983407089060921,
 							"parameters": {
 								"seconds": "1.0"
 							}
@@ -473,17 +335,17 @@
 						{
 							"id": "destroy",
 							"objectClass": "player",
-							"sid": 769077826967916
+							"sid": 311768302500300
 						},
 						{
 							"id": "destroy",
 							"objectClass": "enemy",
-							"sid": 171680850431313
+							"sid": 337910555458987
 						},
 						{
 							"id": "fade-volume",
 							"objectClass": "Audio",
-							"sid": 679561798584842,
+							"sid": 345767821806762,
 							"parameters": {
 								"tag": "\"music\"",
 								"db": "-100",
@@ -492,7 +354,7 @@
 							}
 						}
 					],
-					"sid": 727121701159789,
+					"sid": 786806675578581,
 					"children": [
 						{
 							"eventType": "block",
@@ -500,7 +362,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 151827954716454,
+									"sid": 294931432135230,
 									"parameters": {
 										"first-value": "Winner",
 										"comparison": 0,
@@ -510,26 +372,14 @@
 							],
 							"actions": [
 								{
-									"id": "set-text",
-									"objectClass": "menuText",
-									"sid": 772838398977066,
-									"parameters": {
-										"text": "\"You win!\" & newline & \"New game?\""
-									}
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 927617870051120,
-									"parameters": {
-										"audio-file": "winning",
-										"loop": "not-looping",
-										"volume": "-8",
-										"tag-optional": "\"\""
-									}
+									"callFunction": "end",
+									"sid": 120284539837502,
+									"parameters": [
+										true
+									]
 								}
 							],
-							"sid": 511252439791212
+							"sid": 349955012596246
 						},
 						{
 							"eventType": "block",
@@ -537,31 +387,19 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 454068495646999
+									"sid": 341216414828807
 								}
 							],
 							"actions": [
 								{
-									"id": "set-text",
-									"objectClass": "menuText",
-									"sid": 571015006202706,
-									"parameters": {
-										"text": "\"You lose!\" & newline & \"New game?\""
-									}
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 838043491456312,
-									"parameters": {
-										"audio-file": "losing",
-										"loop": "not-looping",
-										"volume": "-8",
-										"tag-optional": "\"\""
-									}
+									"callFunction": "end",
+									"sid": 937755183892774,
+									"parameters": [
+										false
+									]
 								}
 							],
-							"sid": 803892703620915
+							"sid": 756309356399636
 						}
 					]
 				},
@@ -578,7 +416,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 941584024758646,
+							"sid": 913653632277889,
 							"parameters": {
 								"audio-file": "btn_sound",
 								"loop": "not-looping",
@@ -589,7 +427,7 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 900519789745720,
+							"sid": 567522754995188,
 							"parameters": {
 								"layer": "\"Racing\"",
 								"visibility": "visible"
@@ -597,16 +435,16 @@
 						},
 						{
 							"callFunction": "mapMovements",
-							"sid": 750932023156522
+							"sid": 973688577922109
 						},
 						{
 							"callFunction": "prepareGamePlayer",
-							"sid": 591070176333363
+							"sid": 839228519594443
 						},
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 630118215827954,
+							"sid": 339011185393379,
 							"parameters": {
 								"audio-file": "racingMusic",
 								"loop": "looping",
@@ -617,29 +455,158 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 536454094573221,
+							"sid": 776261518236634,
 							"parameters": {
 								"seconds": "4"
 							}
 						},
 						{
 							"callFunction": "prepareAI",
-							"sid": 559503879633968
+							"sid": 588747855451998
 						},
 						{
 							"id": "set-enabled",
 							"objectClass": "player",
-							"sid": 184073935825166,
+							"sid": 318277884609385,
 							"behaviorType": "Car",
 							"parameters": {
 								"state": "enabled"
 							}
 						}
 					],
-					"sid": 865525214451838
+					"sid": 460012927103368
 				}
 			],
-			"sid": 655493047000201
+			"sid": 356876178487415
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Laps Controll",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "newLap",
+					"functionDescription": "",
+					"functionCategory": "general",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 990070486724850,
+							"parameters": {
+								"variable": "playerLap",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 239116216939439,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 935070625350293,
+									"parameters": {
+										"variable": "playerLap",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "finishGame",
+									"sid": 780071858375622,
+									"parameters": [
+										"\"Player\""
+									]
+								}
+							],
+							"sid": 621222131873581
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 393736852794399
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Lap",
+									"sid": 526790580484334,
+									"parameters": {
+										"text": "\"Lap   \" & playerLap & \"/3\""
+									}
+								}
+							],
+							"sid": 577440903492231
+						}
+					]
+				},
+				{
+					"functionName": "newLapEnemy",
+					"functionDescription": "",
+					"functionCategory": "general",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 907966797069292,
+							"parameters": {
+								"variable": "enemyLap",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 758845437398805,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 167890125942735,
+									"parameters": {
+										"variable": "enemyLap",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "finishGame",
+									"sid": 427019324679660,
+									"parameters": [
+										"\"Enemy\""
+									]
+								}
+							],
+							"sid": 814606457222664
+						}
+					]
+				}
+			],
+			"sid": 458141172667739
 		},
 		{
 			"eventType": "group",
@@ -1915,7 +1882,15 @@
 											}
 										}
 									],
-									"sid": 790795959823689
+									"sid": 790795959823689,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 672178256781598
+										}
+									]
 								}
 							]
 						}
@@ -2689,6 +2664,309 @@
 				}
 			],
 			"sid": 200181369751818
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu animations",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "open",
+					"functionDescription": "",
+					"functionCategory": "menu",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "isBeginning",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 111886646584024
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 408287814282238,
+							"parameters": {
+								"layer": "\"Menu\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 310191775520134,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "bg: 500 x 500"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 294864798615106,
+									"parameters": {
+										"variable": "isBeginning"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "menuText",
+									"sid": 807842637965286,
+									"parameters": {
+										"text": "\"New game?\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 400455090052916,
+									"parameters": {
+										"audio-file": "using_item",
+										"loop": "not-looping",
+										"volume": "-8",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 845070329887326
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "menuPanel",
+									"sid": 979074536478182,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetHeight",
+										"end-value": "500",
+										"time": "0.5",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 662759193879298
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "menuText",
+									"sid": 130602117900313,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "btn_Menu",
+									"sid": 797652406375704,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 842605020307911
+						}
+					]
+				},
+				{
+					"functionName": "close",
+					"functionDescription": "",
+					"functionCategory": "menu",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 461644497289020,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "menuText",
+									"sid": 177726796847672,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "btn_Menu",
+									"sid": 130795333843286,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "menuPanel",
+									"sid": 752418118130632,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetHeight",
+										"end-value": "1",
+										"time": "0.5",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 776316291748667
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 436247036209957,
+									"parameters": {
+										"layer": "\"Menu\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 925084508361325
+						}
+					]
+				},
+				{
+					"functionName": "end",
+					"functionDescription": "",
+					"functionCategory": "menu",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "isPlayer",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 477480555851157
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 383964740180049,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 230955750421241,
+									"parameters": {
+										"variable": "isPlayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "menuText",
+									"sid": 945149019863306,
+									"parameters": {
+										"text": "\"You win!\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 880496748944549,
+									"parameters": {
+										"audio-file": "winning",
+										"loop": "not-looping",
+										"volume": "-8",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 864498691236099
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 446492625046443
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "menuText",
+									"sid": 363027310581302,
+									"parameters": {
+										"text": "\"You lose!\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 594358058841352,
+									"parameters": {
+										"audio-file": "losing",
+										"loop": "not-looping",
+										"volume": "-8",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 801870285823269
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "append-text",
+									"objectClass": "menuText",
+									"sid": 762901491029342,
+									"parameters": {
+										"text": "newline & \"Reload level?\""
+									}
+								},
+								{
+									"callFunction": "open",
+									"sid": 187225573034130,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 240701606283829
+						}
+					]
+				}
+			],
+			"sid": 520064853918416
 		}
 	],
 	"sid": 213071187365425

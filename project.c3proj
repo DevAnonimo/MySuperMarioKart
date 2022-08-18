@@ -117,6 +117,14 @@
 			"author": "Scirra",
 			"version": "r302",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r302",
+			"bundled": false
 		}
 	],
 	"uniqueId": "xz6ofd2aptv",

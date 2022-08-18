@@ -4912,12 +4912,18 @@
 							},
 							"uid": 140,
 							"instanceVariables": {},
-							"behaviors": {},
+							"behaviors": {
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
+								}
+							},
 							"world": {
 								"x": 960,
 								"y": 540,
 								"width": 500,
-								"height": 500,
+								"height": 1,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -4949,7 +4955,7 @@
 								"horizontal-alignment": "center",
 								"vertical-alignment": "center",
 								"wrapping": "word",
-								"initially-visible": true,
+								"initially-visible": false,
 								"origin": "center"
 							},
 							"uid": 141,
@@ -4975,7 +4981,7 @@
 						{
 							"type": "btn_Menu",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"initial-animation": "Animation 1",
 								"initial-frame": 0,
 								"enable-collisions": true,

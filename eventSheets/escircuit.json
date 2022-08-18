@@ -152,21 +152,11 @@
 					"sid": 871842136725693
 				},
 				{
-					"id": "set-text",
-					"objectClass": "menuText",
-					"sid": 804897014055806,
-					"parameters": {
-						"text": "\"New game?\""
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 240727954077140,
-					"parameters": {
-						"layer": "\"Menu\"",
-						"visibility": "visible"
-					}
+					"callFunction": "open",
+					"sid": 941313836851229,
+					"parameters": [
+						true
+					]
 				}
 			],
 			"sid": 155928672402841
@@ -1876,13 +1866,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 436247036209957,
-							"parameters": {
-								"layer": "\"Menu\"",
-								"visibility": "invisible"
-							}
+							"callFunction": "close",
+							"sid": 977021558732116
 						}
 					],
 					"sid": 816842530873254,
