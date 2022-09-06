@@ -13,6 +13,7 @@
 					"functionDescription": "",
 					"functionCategory": "general",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -168,6 +169,7 @@
 					"functionDescription": "",
 					"functionCategory": "general",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -220,6 +222,7 @@
 					"functionDescription": "",
 					"functionCategory": "general",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -285,6 +288,7 @@
 					"functionDescription": "",
 					"functionCategory": "general",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -296,7 +300,17 @@
 						}
 					],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 249546031728863,
+							"parameters": {
+								"variable": "isGameFinished"
+							},
+							"isInverted": true
+						}
+					],
 					"actions": [
 						{
 							"id": "set-boolean-eventvar",
@@ -408,6 +422,7 @@
 					"functionDescription": "",
 					"functionCategory": "general",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -491,6 +506,7 @@
 					"functionDescription": "",
 					"functionCategory": "general",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -561,6 +577,7 @@
 					"functionDescription": "",
 					"functionCategory": "general",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -620,6 +637,7 @@
 					"functionDescription": "",
 					"functionCategory": "AI",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -674,6 +692,7 @@
 					"functionDescription": "",
 					"functionCategory": "AI",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1403,6 +1422,7 @@
 					"functionDescription": "",
 					"functionCategory": "movement",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1454,6 +1474,7 @@
 									"id": "set-playback-rate",
 									"objectClass": "Audio",
 									"sid": 375657867807635,
+									"disabled": true,
 									"parameters": {
 										"tag": "\"badTerrain\"",
 										"playback-rate": "2"
@@ -1463,6 +1484,7 @@
 									"id": "add-gain-effect",
 									"objectClass": "Audio",
 									"sid": 921285217763068,
+									"disabled": true,
 									"parameters": {
 										"tag": "\"badTerrain\"",
 										"gain": "10"
@@ -1485,6 +1507,7 @@
 											"id": "play",
 											"objectClass": "Audio",
 											"sid": 211429690824362,
+											"disabled": true,
 											"parameters": {
 												"audio-file": "badTerrain",
 												"loop": "looping",
@@ -1511,6 +1534,7 @@
 									"id": "stop",
 									"objectClass": "Audio",
 									"sid": 963957959898586,
+									"disabled": true,
 									"parameters": {
 										"tag": "\"badTerrain\""
 									}
@@ -1647,6 +1671,7 @@
 					"functionDescription": "",
 					"functionCategory": "movement",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1724,6 +1749,7 @@
 					"functionDescription": "",
 					"functionCategory": "movement",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1750,6 +1776,7 @@
 					"functionDescription": "",
 					"functionCategory": "movement",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1901,6 +1928,7 @@
 					"functionDescription": "",
 					"functionCategory": "movement",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2079,6 +2107,7 @@
 							"functionDescription": "",
 							"functionCategory": "items",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -2165,6 +2194,7 @@
 							"functionDescription": "",
 							"functionCategory": "items",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -2268,6 +2298,7 @@
 					"functionDescription": "",
 					"functionCategory": "items",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2321,6 +2352,7 @@
 					"functionDescription": "",
 					"functionCategory": "items",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2677,6 +2709,7 @@
 					"functionDescription": "",
 					"functionCategory": "menu",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2792,6 +2825,7 @@
 					"functionDescription": "",
 					"functionCategory": "menu",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2859,6 +2893,7 @@
 					"functionDescription": "",
 					"functionCategory": "menu",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
